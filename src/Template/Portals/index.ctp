@@ -14,11 +14,12 @@
 
     <?php foreach ($portals as $portal): ?>
     <tr>
-        <td><?= $portal->agent ?></td>
+       
         <td>
             <?= $this->Html->link($portal->name,
             ['controller' => 'Portals', 'action' => 'view', $portal->guid]) ?>
         </td>
+         <td><?= $portal->agent ?></td>
         <td><?= $portal->date->format(DATE_RFC850) ?></td>
         <td><?= $portal->faction ?></td>
         <td><?= $portal->guid ?></td>
