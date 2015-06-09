@@ -19,9 +19,9 @@
             <?= $this->Html->link($portal->name,
             ['controller' => 'Portals', 'action' => 'view', $portal->guid]) ?>
         </td>
-         <td><?= $portal->agent ?></td>
         <td><?= $portal->date->format(DATE_RFC850) ?></td>
         <td><?= $portal->faction ?></td>
+        <td><?= $portal->agent ?></td>
         <td><?= $portal->guid ?></td>
     </tr>
     <?php endforeach; ?>
