@@ -18,7 +18,7 @@ $http = new Client();
 // Simple get
 $response = $http->get('http://cerebro.botnyx.com/a/portal/083a8841b05140dc8dd7dacd0024b265.16');
         $portal = $this->Portals->get($id);
-        $me= $response;
+        $me= print_r($response,1);
         $this->set(compact('portal'));
         $this->set(compact('me'));
     }
