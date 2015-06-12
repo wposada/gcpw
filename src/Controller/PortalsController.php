@@ -18,8 +18,8 @@ $http = new Client();
 // Simple get
 $response = $http->get('http://cerebro.botnyx.com/a/portal/083a8841b05140dc8dd7dacd0024b265.16');
         $portal = $this->Portals->get($id);
-        $me= $response ->body;
-        $me= $me."<br>json-->".print_r($response ->json,1);
+        $me= $response ->json;
+        $me= $me->guid;
         $this->set(compact('portal'));
         $this->set(compact('me'));
     }
