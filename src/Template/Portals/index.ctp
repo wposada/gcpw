@@ -17,7 +17,7 @@
        
         <td>
             <?= $this->Html->link($portal->name,
-            ['controller' => 'Portals', 'action' => 'view', $portal->guid]) ?>
+            ['controller' => 'Portals', 'action' => 'view', $portal->id]) ?>
         </td>
         <td><?= $portal->date->format(DATE_RFC850) ?></td>
         <td><?= $portal->faction ?></td>
