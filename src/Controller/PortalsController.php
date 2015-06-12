@@ -12,5 +12,6 @@ class PortalsController extends AppController
         $portal = $this->Portals->get($id);
         $me="mee";
         $this->set(compact('portal'));
+        $this->set(compact('me'));
     }
 }
