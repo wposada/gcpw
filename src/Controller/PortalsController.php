@@ -12,7 +12,7 @@ class PortalsController extends AppController
     public function view($id = null)
     {
         $portal = $this->Portals->get($id);
-        $me= $http->get('https://cerebro.botnyx.com/a/portal/083a8841b05140dc8dd7dacd0024b265.16');
+        $me= $http->get('http://www.google.com');
         $this->set(compact('portal'));
         $this->set(compact('me'));
     }
