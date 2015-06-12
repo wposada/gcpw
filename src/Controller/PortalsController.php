@@ -1,5 +1,6 @@
 <?
 namespace App\Controller;
+use Cake\Network\Http\Client;
 
 class PortalsController extends AppController
 {
@@ -10,7 +11,7 @@ class PortalsController extends AppController
     }
     public function view($id = null)
     {
-        use Cake\Network\Http\Client;
+        
 
 $http = new Client();
 
