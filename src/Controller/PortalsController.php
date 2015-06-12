@@ -1,7 +1,6 @@
 <?
 namespace App\Controller;
-use Cake\Network\Http\Client;
-$http = new Client();
+
 class PortalsController extends AppController
 {
     public function index()
@@ -11,8 +10,14 @@ class PortalsController extends AppController
     }
     public function view($id = null)
     {
+        use Cake\Network\Http\Client;
+
+$http = new Client();
+
+// Simple get
+$response = $http->get('http://example.com/test.html');
         $portal = $this->Portals->get($id);
-        $me= $http->get('http://www.google.com');
+        $me= $response;
         $this->set(compact('portal'));
         $this->set(compact('me'));
     }
