@@ -10,6 +10,7 @@ class PortalsController extends AppController
     public function view($id = null)
     {
         $portal = $this->Portals->get($id);
+        $me="mee";
         $this->set(compact('portal'));
     }
 }
