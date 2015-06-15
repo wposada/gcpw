@@ -21,11 +21,14 @@ class PortalsController extends AppController
         $portalJson= json_decode($response->body);
         //var_dump(json_decode($portalJson,true));
         foreach ($portalJson as $clave => $valor){
-            echo $clave;
+            //echo $clave;
             $portalsTable = TableRegistry::get('Portals');
             $portal = $portalsTable->newEntity();
             $portal->guid = $clave;
-            $portalsTable->save($portal);
+            //$portalsTable->save($portal);
+            foreach ($valor as $clave2 => $valor2){
+                echo $clave2."-->"$valor2;
+            }
         } 
         $this->set(compact('portal'));
         $this->set(compact('portalJson'));
