@@ -17,8 +17,8 @@ class PortalsController extends AppController
         //$response = $http->get('http://cerebro.botnyx.com/a/portal/083a8841b05140dc8dd7dacd0024b265.16');////1portal
         $response= $http->get('http://cerebro.botnyx.com/a/portals/4.649456/-74.101633/1');
         $portal = $this->Portals->get($id);
-        $portalJson= json_decode($response);
-        var_dump(portalJson);
+        $portalJson= json_decode($response,false);
+        var_dump($portalJson);
         //foreach ($portalJson as $clave => $valor){
         //    $portalList[$i][]=echo $clave."-->".$valor."<br>";
         //} 
