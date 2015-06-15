@@ -25,10 +25,16 @@ class PortalsController extends AppController
             $portalsTable = TableRegistry::get('Portals');
             $portal = $portalsTable->newEntity();
             $portal->guid = $clave;
-            //$portalsTable->save($portal);
             foreach ($valor as $clave2 => $valor2){
-                echo $clave2."-->".$valor2;
+                if($clave2=='title'){
+                    $portal-> name = $valor2;
+                }
+                if($clave2=='team'){
+                    $portal-> faction = $valor2=="RESISTANCE"?"RES":"ENL";
+                }
+                
             }
+            $portalsTable->save($portal);
         } 
         $this->set(compact('portal'));
         $this->set(compact('portalJson'));
