@@ -18,7 +18,10 @@ class PortalsController extends AppController
         $response= $http->get('http://cerebro.botnyx.com/a/portals/4.649456/-74.101633');
         $portal = $this->Portals->get($id);
         $me= $response ->json;
-        $me= $me['title'];
+        foreach($me as $key => $value)
+        {
+            echo $key." has the value". $value;
+        }
         $this->set(compact('portal'));
         $this->set(compact('me'));
     }
