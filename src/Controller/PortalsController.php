@@ -27,7 +27,7 @@ class PortalsController extends AppController
             $portal->guid = $clave;
             //$portalsTable->save($portal);
             foreach ($valor as $clave2 => $valor2){
-                echo $clave2."-->"$valor2;
+                echo $clave2."-->".$valor2;
             }
         } 
         $this->set(compact('portal'));
