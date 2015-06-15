@@ -5,6 +5,4 @@
 <p>Owner: 
 <?= h($portal->agent)  ?> - 
 <?= h(var_dump($portalJson))  ?>
-
-
 </p>
