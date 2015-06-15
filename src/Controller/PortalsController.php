@@ -19,7 +19,7 @@ class PortalsController extends AppController
         $portal = $this->Portals->get($id);
         $portalJson= $response ->json;
         foreach ($portalJson as $clave => $valor){
-            echo $clave."-->"$valor."<br>";
+            echo $clave."-->".$valor."<br>";
         } 
         $this->set(compact('portal'));
         $this->set(compact('portalJson'));
