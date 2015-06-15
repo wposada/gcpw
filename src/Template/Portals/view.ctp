@@ -4,5 +4,5 @@
 <p><?= h($portal->faction) ?></p>
 <p>Owner: 
 <?= h($portal->agent)  ?> - 
-<?= h(var_dump($portalJson))  ?>
+<?= //h(var_dump($portalJson))  ?>
 </p>
