@@ -5,13 +5,6 @@
 <p>Owner: 
 <?= h($portal->agent)  ?> - 
 <?= h(var_dump($portalJson))  ?>
-<?=
-foreach ($portalJson as $clave => $valor){
-  echo $clave."-->"$valor."<br>";
-  
-} 
-
-?>
 
 
 </p>
