@@ -1,6 +1,7 @@
 <?
 namespace App\Controller;
 use Cake\Network\Http\Client;
+use Cake\ORM\TableRegistry;
 
 class PortalsController extends AppController
 {
@@ -21,6 +22,10 @@ class PortalsController extends AppController
         //var_dump(json_decode($portalJson,true));
         foreach ($portalJson as $clave => $valor){
             echo $clave;
+            $portalsTable = TableRegistry::get('Portals');
+            $portal = $portalsTable->newEntity();
+            $portal->guid = $clave;
+            $portalsTable->save($portal);
         } 
         $this->set(compact('portal'));
         $this->set(compact('portalJson'));
