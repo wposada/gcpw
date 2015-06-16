@@ -23,7 +23,7 @@ class PortalsController extends AppController
         foreach ($portalJson as $clave => $valor){
             //echo $clave;
             $portalsTable = TableRegistry::get('Portals');
-           $portalSave->guid = ;
+           $portalSave->guid = $clave;
             // In a controller or table method.
             $query = $portals->find('all', [
                 'conditions' => ['Portals.guid LIKE' => '%'.$clave.'%']
