@@ -21,10 +21,20 @@ class PortalsController extends AppController
         foreach ($portalJson as $clave => $valor){
             //echo $clave;
             $portalsTable = TableRegistry::get('Portals');
-            $portalSave = $portalsTable->newEntity();
-            $portalSave->guid = $clave;
+           
+            
             $portals = TableRegistry::get('Portals');
             $total = $portals->find()->where(['guid' => $clave])->count();
+            if($total){
+                $query = $portals->find();
+                $query->select(['id'])->where(['guid' => $clave);
+                foreach ($query as $row) {
+                    debug($row->id);
+                }
+            }else{
+                $portalSave = $portalsTable->newEntity();
+                $portalSave->guid = $clave;
+            }
             
             foreach ($valor as $clave2 => $valor2){
                 if($clave2=='title'){
@@ -35,7 +45,7 @@ class PortalsController extends AppController
                 }
                 
             }
-            $response = $http->get('http://cerebro.botnyx.com/a/portal/'.$portalSave->guid);
+            $response = $http->get('http://cerebro.botnyx.com/a/portal/'.$clave);
             $portalUpdate=json_decode($response->body);
             //echo $portalUpdate->owner;
             $portalSave-> agent= $portalUpdate->owner;
