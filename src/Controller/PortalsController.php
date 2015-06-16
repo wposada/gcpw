@@ -25,7 +25,7 @@ class PortalsController extends AppController
             $portalsTable = TableRegistry::get('Portals');
            $portalSave->guid = $clave;
             // In a controller or table method.
-            $query = $portals->find('all', [
+            $query = $portalsTable->find('all', [
                 'conditions' => ['Portals.guid LIKE' => '%'.$clave.'%']
                 ]);
             $number = $query->count();
