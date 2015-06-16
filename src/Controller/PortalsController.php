@@ -23,6 +23,8 @@ class PortalsController extends AppController
             $portalsTable = TableRegistry::get('Portals');
             $portalSave = $portalsTable->newEntity();
             $portalSave->guid = $clave;
+            $portals = TableRegistry::get('Portals');
+            $total = $portals->find()->where(['guid' => $clave])->count();
             foreach ($valor as $clave2 => $valor2){
                 if($clave2=='title'){
                     $portalSave-> name = $valor2;
