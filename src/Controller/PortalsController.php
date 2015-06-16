@@ -34,7 +34,7 @@ class PortalsController extends AppController
                 }
                 
             }
-            $portalsTable->save($portal);
+            //$portalsTable->save($portal);
         } 
         $this->set(compact('portal'));
         $this->set(compact('portalJson'));
