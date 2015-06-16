@@ -49,7 +49,8 @@ class PortalsController extends AppController
             $portalUpdate=json_decode($response->body);
             //echo $portalUpdate->owner;
             $portalSave-> agent= $portalUpdate->owner;
-            $portalSave-> lng= $total;
+            $portalSave-> lng= 0;
+            $portalSave-> lng= 0;
             
             $portalsTable->save($portalSave);
         } 
