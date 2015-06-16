@@ -25,6 +25,7 @@ class PortalsController extends AppController
             $portalSave->guid = $clave;
             $portals = TableRegistry::get('Portals');
             $total = $portals->find()->where(['guid' => $clave])->count();
+            
             foreach ($valor as $clave2 => $valor2){
                 if($clave2=='title'){
                     $portalSave-> name = $valor2;
@@ -38,6 +39,8 @@ class PortalsController extends AppController
             $portalUpdate=json_decode($response->body);
             //echo $portalUpdate->owner;
             $portalSave-> agent= $portalUpdate->owner;
+            $portalSave-> lng= $total;
+            
             $portalsTable->save($portalSave);
         } 
         $this->set(compact('portal'));
