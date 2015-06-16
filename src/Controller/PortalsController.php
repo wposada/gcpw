@@ -27,7 +27,7 @@ class PortalsController extends AppController
             $total = $portals->find()->where(['guid' => $clave])->count();
             if($total){
                 $query = $portals->find();
-                $query->select(['id'])->where(['guid' => $clave);
+                $query->select(['id'])->where(['guid' => $clave]);
                 foreach ($query as $row) {
                     debug($row->id);
                 }
