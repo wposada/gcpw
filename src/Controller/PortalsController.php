@@ -23,14 +23,14 @@ class PortalsController extends AppController
         foreach ($portalJson as $clave => $valor){
             //echo $clave;
             $portalsTable = TableRegistry::get('Portals');
-            $portal = $portalsTable->newEntity();
-            $portal->guid = $clave;
+            $portalSave = $portalsTable->newEntity();
+            $portalSave->guid = $clave;
             foreach ($valor as $clave2 => $valor2){
                 if($clave2=='title'){
-                    $portal-> name = $valor2;
+                    $portalSave-> name = $valor2;
                 }
                 if($clave2=='team'){
-                    $portal-> faction = $valor2=="RESISTANCE"?"RES":($valor2=="ALIENS"?"ENL":"N_N");
+                    $portalSave-> faction = $valor2=="RESISTANCE"?"RES":($valor2=="ALIENS"?"ENL":"N_N");
                 }
                 
             }
