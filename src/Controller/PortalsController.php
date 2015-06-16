@@ -2,7 +2,6 @@
 namespace App\Controller;
 use Cake\Network\Http\Client;
 use Cake\ORM\TableRegistry;
-
 class PortalsController extends AppController
 {
     public function index()
@@ -13,7 +12,6 @@ class PortalsController extends AppController
     public function view($id = null)
     {
          $http = new Client();
-
           // Simple get
         //$response = $http->get('http://cerebro.botnyx.com/a/portal/083a8841b05140dc8dd7dacd0024b265.16');////1portal
         $response= $http->get('http://cerebro.botnyx.com/a/portals/4.649456/-74.101633/1');
@@ -23,9 +21,9 @@ class PortalsController extends AppController
         foreach ($portalJson as $clave => $valor){
             //echo $clave;
             $portalsTable = TableRegistry::get('Portals');
-           $portalSave->guid = $clave;
+           $portalSave->guid = ;
             // In a controller or table method.
-            $query = $portalsTable->find('all', [
+            $query = $portals->find('all', [
                 'conditions' => ['Portals.guid LIKE' => '%'.$clave.'%']
                 ]);
             $number = $query->count();
@@ -51,6 +49,5 @@ class PortalsController extends AppController
         } 
         $this->set(compact('portal'));
         $this->set(compact('portalJson'));
-
     }
 }
