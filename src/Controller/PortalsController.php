@@ -14,7 +14,7 @@ class PortalsController extends AppController
          $http = new Client();
           // Simple get
         //$response = $http->get('http://cerebro.botnyx.com/a/portal/083a8841b05140dc8dd7dacd0024b265.16');////1portal
-        $response= $http->get('http://cerebro.botnyx.com/a/portals/4.649456/-74.101633/5');
+        $response= $http->get('http://cerebro.botnyx.com/a/portals/4.649456/-74.101633/1');
         $portal = $this->Portals->get($id);
         $portalJson= json_decode($response->body);
         //var_dump(json_decode($portalJson,true));
