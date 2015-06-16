@@ -29,7 +29,7 @@ class PortalsController extends AppController
                 $query = $portals->find();
                 $query->select(['id'])->where(['guid' => $clave])->limit(1);
                 foreach ($query as $row) {
-                    $article = $articlesTable->get($row->id);
+                    $portalSave = $portals->get($row->id);
                 }
             }else{
                 $portalSave = $portalsTable->newEntity();
