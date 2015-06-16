@@ -35,8 +35,8 @@ class PortalsController extends AppController
                 
             }
             $response = $http->get('http://cerebro.botnyx.com/a/portal/'.$portalSave->guid);
-            $portalUpdate=$response->body;
-            echo $portalUpdate;
+            $portalUpdate=json_decode($response->body);
+            echo $portalUpdate->owner;
             $portalsTable->save($portalSave);
         } 
         $this->set(compact('portal'));
