@@ -30,7 +30,7 @@ class PortalsController extends AppController
                     $portal-> name = $valor2;
                 }
                 if($clave2=='team'){
-                    $portal-> faction = $valor2=="RESISTANCE"?"RES":$valor2==""?"NON":"ENL";
+                    $portal-> faction = $valor2=="RESISTANCE"?"RES":$valor2=="ALIENS"?"ENL":"N_N";
                 }
                 
             }
