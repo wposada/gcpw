@@ -9,6 +9,18 @@ class PortalsController extends AppController
         $portals = $this->Portals->find('all');
         $this->set(compact('portals'));
     }
+    
+    public function update()
+    {
+
+        $portals = TableRegistry::get('Portals');
+        $portal = $portals->get(2);
+        $portal-> lng = 1;
+        $portal-> lat =2;
+        $portals->save($portal);
+        
+    }
+    
     public function view($id = null)
     {
          $http = new Client();
