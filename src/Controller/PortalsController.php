@@ -15,8 +15,9 @@ class PortalsController extends AppController
 
         $portals = TableRegistry::get('Portals');
         $portal = $portals->get(2);
-        $portal-> lng = 1;
-        $portal-> lat =2;
+        $portal-> lng = $lng;
+        $portal-> lat =$lat;
+        $portal-> name =$name;
         $portals->save($portal);
         
     }
