@@ -10,7 +10,7 @@ class PortalsController extends AppController
         $this->set(compact('portals'));
     }
     
-    public function update()
+    public function update($lng=null,$lat=null,$name=null)
     {
 
         $portals = TableRegistry::get('Portals');
