@@ -1,4 +1,4 @@
-<?
+<?php
 namespace App\Controller;
 use Cake\Network\Http\Client;
 use Cake\ORM\TableRegistry;
