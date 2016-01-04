@@ -1,6 +1,6 @@
 <!-- File: /src/Template/Portals/index.ctp -->
 
-<h1>Portales<?php echo Configure::version();?></h1>
+<h1>Portales..</h1>
 <table>
     <tr>
         <th>name</th>
