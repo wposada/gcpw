@@ -24,12 +24,17 @@ class PortalsController extends AppController
     
     public function view($id = null)
     {
+        $portal = $this->Portals->get($id);
+        $this->set(compact('portal'));
+    }
+    public function view2($id = null)
+    {
          $http = new Client();
           // Simple get
         //$response = $http->get('http://cerebro.botnyx.com/a/portal/083a8841b05140dc8dd7dacd0024b265.16');////1portal
-        $response= $http->get('http://cerebro.botnyx.com/a/portals/4.649456/-74.101633/1');
+        //$response= $http->get('http://cerebro.botnyx.com/a/portals/4.649456/-74.101633/1');
         $portal = $this->Portals->get($id);
-        $portalJson= json_decode($response->body);
+        //$portalJson= json_decode($response->body);
         //var_dump(json_decode($portalJson,true));
         foreach ($portalJson as $clave => $valor){
             //echo $clave;
@@ -68,6 +73,6 @@ class PortalsController extends AppController
             $portalsTable->save($portalSave);
         } 
         $this->set(compact('portal'));
-        $this->set(compact('portalJson'));
+       // $this->set(compact('portalJson'));
     }
 }
