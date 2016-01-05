@@ -25,7 +25,7 @@ class PortalsController extends AppController
     public function view($id = null)
     {
         //$portal = $this->Portals->findById('1');
-        $portal = $this->portals->getById($id);
+        $portal = $this->portals->get($id);
         $this->set(compact('portal'));
     }
     public function view2($id = null)
