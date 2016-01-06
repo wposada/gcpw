@@ -20,3 +20,51 @@
 2015-06-08 23:35:57 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
 2015-06-08 23:42:18 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
 2015-06-09 00:11:47 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2016-01-06 20:24:27 Error: [PDOException] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Request URL: /gcpw/portals
+Stack Trace:
+#0 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/Database/Driver/PDODriverTrait.php(48): PDO->__construct('mysql:host=loca...', 'root', 'K1t8HwwS', Array)
+#1 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/Database/Driver/Mysql.php(89): Cake\Database\Driver\Mysql->_connect('mysql:host=loca...', Array)
+#2 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/Database/Schema/BaseSchema.php(46): Cake\Database\Driver\Mysql->connect()
+#3 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/Database/Dialect/MysqlDialectTrait.php(62): Cake\Database\Schema\BaseSchema->__construct(Object(Cake\Database\Driver\Mysql))
+#4 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/Database/Schema/Collection.php(52): Cake\Database\Driver\Mysql->schemaDialect()
+#5 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/Database/Schema/CachedCollection.php(44): Cake\Database\Schema\Collection->__construct(Object(Cake\Database\Connection))
+#6 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/Database/Connection.php(319): Cake\Database\Schema\CachedCollection->__construct(Object(Cake\Database\Connection), true)
+#7 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/ORM/Table.php(425): Cake\Database\Connection->schemaCollection()
+#8 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/ORM/Query.php(141): Cake\ORM\Table->schema()
+#9 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/ORM/Query.php(123): Cake\ORM\Query->addDefaultTypes(Object(Cake\ORM\Table))
+#10 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/ORM/Table.php(1164): Cake\ORM\Query->__construct(Object(Cake\Database\Connection), Object(Cake\ORM\Table))
+#11 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/ORM/Table.php(883): Cake\ORM\Table->query()
+#12 /opt/bitnami/apache2/htdocs/gcpw/src/Controller/PortalsController.php(9): Cake\ORM\Table->find('all')
+#13 [internal function]: App\Controller\PortalsController->index()
+#14 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/Controller/Controller.php(410): call_user_func_array(Array, Array)
+#15 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#16 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\PortalsController))
+#17 /opt/bitnami/apache2/htdocs/gcpw/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#18 {main}
+
+
+2016-01-06 20:27:11 Error: [PDOException] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Request URL: /gcpw/portals
+Stack Trace:
+#0 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/Database/Driver/PDODriverTrait.php(48): PDO->__construct('mysql:host=loca...', 'root', 'm,0j0M3=.6Si', Array)
+#1 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/Database/Driver/Mysql.php(89): Cake\Database\Driver\Mysql->_connect('mysql:host=loca...', Array)
+#2 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/Database/Schema/BaseSchema.php(46): Cake\Database\Driver\Mysql->connect()
+#3 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/Database/Dialect/MysqlDialectTrait.php(62): Cake\Database\Schema\BaseSchema->__construct(Object(Cake\Database\Driver\Mysql))
+#4 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/Database/Schema/Collection.php(52): Cake\Database\Driver\Mysql->schemaDialect()
+#5 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/Database/Schema/CachedCollection.php(44): Cake\Database\Schema\Collection->__construct(Object(Cake\Database\Connection))
+#6 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/Database/Connection.php(319): Cake\Database\Schema\CachedCollection->__construct(Object(Cake\Database\Connection), true)
+#7 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/ORM/Table.php(425): Cake\Database\Connection->schemaCollection()
+#8 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/ORM/Query.php(141): Cake\ORM\Table->schema()
+#9 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/ORM/Query.php(123): Cake\ORM\Query->addDefaultTypes(Object(Cake\ORM\Table))
+#10 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/ORM/Table.php(1164): Cake\ORM\Query->__construct(Object(Cake\Database\Connection), Object(Cake\ORM\Table))
+#11 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/ORM/Table.php(883): Cake\ORM\Table->query()
+#12 /opt/bitnami/apache2/htdocs/gcpw/src/Controller/PortalsController.php(9): Cake\ORM\Table->find('all')
+#13 [internal function]: App\Controller\PortalsController->index()
+#14 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/Controller/Controller.php(410): call_user_func_array(Array, Array)
+#15 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#16 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\PortalsController))
+#17 /opt/bitnami/apache2/htdocs/gcpw/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#18 {main}
+
+

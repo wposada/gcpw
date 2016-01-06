@@ -220,7 +220,7 @@ return [
              */
             //'port' => 'nonstandard_port_number',
             'username' => 'root',
-            'password' => 'K1t8HwwS',
+            'password' => 'm+0j0M3=.6Si',
             'database' => 'cake',
             'encoding' => 'utf8',
             'timezone' => 'UTC',
