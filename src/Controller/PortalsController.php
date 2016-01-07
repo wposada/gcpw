@@ -7,7 +7,7 @@ class PortalsController extends AppController
     public function index()
     {
              $this->paginate = array(
-            'conditions' => array('Portals.id !=' => '6'),
+            'conditions' => array('Portal.id !=' => '6'),
             'limit' => 3,
             'order' => array('id' => 'desc')
             );
