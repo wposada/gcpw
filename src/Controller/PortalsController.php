@@ -26,8 +26,22 @@ class PortalsController extends AppController
     {
         //$portal = $this->Portals->findById('1');
         
-        $portal = $this->Portals->get($id);
-        $this->set(compact('portal'));
+        /*$portal = $this->Portals->get($id);
+        $this->set(compact('portal'));*/
+         // we prepare our query, the cakephp way!
+        $this->paginate = array(
+            'conditions' => array('Portal.id !=' => '6'),
+            'limit' => 3,
+            'order' => array('id' => 'desc')
+    );
+     
+    // we are using the 'User' model
+    $portals = $this->paginate('Portal');
+     
+    // pass the value to our view.ctp
+    $this->set('portals', $portals);
+        
+        
     }
     public function view2($id = null)
     {
