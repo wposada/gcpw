@@ -13,7 +13,7 @@ class PortalsController extends AppController
             );
                  
     // we are using the 'User' model
-    $portals = $this->paginate('Portal');
+    $portals = $this->paginate('Portals');
      
     // pass the value to our view.ctp
     $this->set('portals', $portals);
