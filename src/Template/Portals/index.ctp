@@ -22,10 +22,10 @@
          // loop through the user's records
          foreach( $portals as $portal ){
              echo "<tr>";
-                 echo "<td>{$user['Portal']['id']}</td>";
-                 echo "<td>{$user['Portal']['name']}</td>";
-                 echo "<td>{$user['Portal']['lgn']}</td>";
-                 echo "<td>{$user['Portal']['lat']}</td>";
+                 echo "<td>{$portal['Portal']['id']}</td>";
+                 echo "<td>{$portal['Portal']['name']}</td>";
+                 echo "<td>{$portal['Portal']['lgn']}</td>";
+                 echo "<td>{$portal['Portal']['lat']}</td>";
              echo "</tr>";
          }
           
