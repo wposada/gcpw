@@ -8,7 +8,7 @@ class PortalsController extends AppController
     {
              $this->paginate = array(
             'conditions' => array(''),
-            'limit' => 3,
+            'limit' => 10,
             'order' => array('id' => 'desc')
             );
                  
@@ -16,7 +16,7 @@ class PortalsController extends AppController
     $portals = $this->paginate('Portals');
      
     // pass the value to our view.ctp
-    $this->set('portals', $portals);
+    $this->set('portal', $portals);
         /*$portals = $this->Portals->find('all');
         $this->set(compact('portals'));*/
     }
