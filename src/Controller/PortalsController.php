@@ -16,7 +16,7 @@ class PortalsController extends AppController
     $portals = $this->paginate('Portals');
      
     // pass the value to our view.ctp
-    $this->set('portal', $portals);
+    $this->set('portals', $portals);
         /*$portals = $this->Portals->find('all');
         $this->set(compact('portals'));*/
     }
