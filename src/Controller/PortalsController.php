@@ -6,8 +6,19 @@ class PortalsController extends AppController
 {
     public function index()
     {
-        $portals = $this->Portals->find('all');
-        $this->set(compact('portals'));
+             $this->paginate = array(
+            'conditions' => array('Portal.id !=' => '6'),
+            'limit' => 3,
+            'order' => array('id' => 'desc')
+            );
+                 
+    // we are using the 'User' model
+    $portals = $this->paginate('Portal');
+     
+    // pass the value to our view.ctp
+    $this->set('portals', $portals);
+        /*$portals = $this->Portals->find('all');
+        $this->set(compact('portals'));*/
     }
     
     public function update($lng=null,$lat=null,$name=null)
@@ -26,20 +37,11 @@ class PortalsController extends AppController
     {
         //$portal = $this->Portals->findById('1');
         
-        /*$portal = $this->Portals->get($id);
-        $this->set(compact('portal'));*/
-         // we prepare our query, the cakephp way!
-        $this->paginate = array(
-            'conditions' => array('Portal.id !=' => '6'),
-            'limit' => 3,
-            'order' => array('id' => 'desc')
-    );
-     
-    // we are using the 'User' model
-    $portals = $this->paginate('Portal');
-     
-    // pass the value to our view.ctp
-    $this->set('portals', $portals);
+        $portal = $this->Portals->get($id);
+        $this->set(compact('portal'));
+
+  
+
         
         
     }
