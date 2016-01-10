@@ -1,66 +1,44 @@
-<?php
- // so we use the paginator object the shorter way.
- // instead of using '$this->Paginator' everytime, we'll use '$paginator'
- $paginator = $this->Paginator;
-  
- if($players){
-  
-     //creating our table
-     echo "<table>";
-  
-         // our table header, we can sort the data user the paginator sort() method!
-         echo "<tr>";
-          
-             // in the sort method, ther first parameter is the same as the column name in our table
-             // the second parameter is the header label we want to display in the view
-            echo "<th>" . $paginator->sort('id', 'ID') . "</th>";
-             echo "<th>" . $paginator->sort('nick', 'Nick') . "</th>";
-             echo "<th>" . $paginator->sort('team', 'Team') . "</th>";
-             echo "<th>" . $paginator->sort('guid', 'GUID') . "</th>";
-         echo "</tr>";
-          
-         // loop through the user's records
-         foreach( $players as $player ){
-             echo "<tr>";
-                 echo "<td>$player->id</td>";
-                 echo "<td>$player->nick</td>";
-                 echo "<td>$player->team</td>";
-                 echo "<td>$player->guid</td>";
-             echo "</tr>";
-         }
-          
-     echo "</table>";
-  
-     // pagination section
-   echo "<div class='paging'>";
-  
-         // the 'first' page button
-         echo $paginator->first("First");
-          
-         // 'prev' page button, 
-         // we can check using the paginator hasPrev() method if there's a previous page
-         // save with the 'next' page button
-         if($paginator->hasPrev()){
-             echo $paginator->prev("Prev");
-         }
-          
-         // the 'number' page buttons
-         echo $paginator->numbers(array('modulus' => 2));
-         
-         // for the 'next' button
-        if($paginator->hasNext()){
-             echo $paginator->next("Next");
-         }
-          
-         // the 'last' page button
-         echo $paginator->last("Last");
-      
-     echo "</div>";
-      
- }
-  
- // tell the user there's no records found
- else{
-     echo "No Players found.";
- }
- ?>
+<div class="users index">
+	<div class="filter"><?php 
+			echo $this->Html->script('jquery-2.1.0');
+
+		echo $this->Form->create('Filter', array('url' => array('controller' => 'players','button' => 'filter','class'=>'filter')));
+		echo $this->Form->input('filtering',array('url' => $base_url,'class'=>'filter','value'=>$filterPlayer,'label'=>'Filter:')); 
+		echo $this->Form->end(array("label" => __('Search'), "class" => "submit small button")); ?>
+	</div>
+	<table cellpadding="0" cellspacing="0">
+	<tr  class="row_head">
+			<th><?php echo $this->Paginator->sort('id'); ?></th>
+			<th><?php echo $this->Paginator->sort('nick'); ?></th>
+			<th><?php echo $this->Paginator->sort('guid'); ?></th>
+			<th class="actions"><?php echo __('Actions'); ?></th>
+	</tr>
+	
+	<?php foreach ($users as $user): ?>
+	<tr>
+		<td><?php echo h($player['Player']['id']); ?>&nbsp;</td>
+		<td><?php echo h($player['Player']['nick']); ?>&nbsp;</td>
+		<td><?php echo h($player['Player']['guid']); ?>&nbsp;</td>
+		<td>&nbsp;</td>
+	</tr>
+<?php endforeach; ?>
+	</table>
+	<p>
+	<?php
+	echo $this->Paginator->counter(array(
+	'format' => __('Page {:page} of {:pages}, showing {:current} records out of {:count} total, starting on record {:start}, ending on {:end}')
+	));
+	?>	</p>
+	<div class="paging">
+	<?php
+		echo $this->Paginator->prev('< ' . __('previous'), array(), null, array('class' => 'prev disabled'));
+		echo $this->Paginator->numbers(array('separator' => ''));
+		echo $this->Paginator->next(__('next') . ' >', array(), null, array('class' => 'next disabled'));
+	?>
+	</div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#FilterFiltering').parent().addClass('filter');
+});
+</script>
