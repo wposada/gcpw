@@ -24,8 +24,8 @@
              echo "<tr>";
                  echo "<td>$player->id</td>";
                  echo "<td>$player->nick</td>";
-                 echo "<td>$portal->team</td>";
-                 echo "<td>$portal->guid</td>";
+                 echo "<td>$player->team</td>";
+                 echo "<td>$player->guid</td>";
              echo "</tr>";
          }
           
