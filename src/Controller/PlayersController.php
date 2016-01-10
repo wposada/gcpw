@@ -9,7 +9,7 @@ class PlayersController extends AppController
         $this -> Players -> recursive = 0;
         if(!$filtering){
 			$this -> set("filterPlayer",'');
-			$this -> set("players", $this -> Paginator -> paginate('Players', array('Players.id >' => 0)));
+			$this -> set("players", $this -> Paginator -> paginate('Players', array('Players.id >' => '0')));
 		}
 		else{
 		    $conditions=array();
