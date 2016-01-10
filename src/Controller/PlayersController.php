@@ -4,7 +4,25 @@ use Cake\Network\Http\Client;
 use Cake\ORM\TableRegistry;
 class PlayersController extends AppController
 {
-    public function index()
+       public function index($filtering=null)
+    {
+        $this -> Player -> recursive = 0;
+        if(!$filtering){
+			$this -> set("filterPlayer",'');
+			$this -> set("players", $this -> Paginator -> paginate('Player', array('Players.id >' => 0)));
+		}
+		else{
+		    $conditions=array();
+			$likes[] = array("User.first_name LIKE" => "%" . $filtering . "%");
+			$conditions["OR"] = $likes;
+			$this -> set("filterPlayer",$filtering);
+			$this -> set("players", $this -> Paginator -> paginate('Players', $conditions));
+
+		}
+    }
+    
+    
+    public function index2()
     {
              $this->paginate = array(
             'conditions' => array(''),
