@@ -2,21 +2,21 @@
 namespace App\Controller;
 use Cake\Network\Http\Client;
 use Cake\ORM\TableRegistry;
-class PortalsController extends AppController
+class PlayersController extends AppController
 {
     public function index()
     {
              $this->paginate = array(
             'conditions' => array(''),
-            'limit' => 10,
+            'limit' => 2,
             'order' => array('id' => 'desc')
             );
                  
     // we are using the 'User' model
-    $portals = $this->paginate('Portals');
+    $players = $this->paginate('Players');
      
     // pass the value to our view.ctp
-    $this->set('portals', $portals);
+    $this->set('players', $players);
         /*$portals = $this->Portals->find('all');
         $this->set(compact('portals'));*/
     }
@@ -36,8 +36,8 @@ class PortalsController extends AppController
     {
         //$portal = $this->Portals->findById('1');
         
-        $portal = $this->Portals->get($id);
-        $this->set(compact('portal'));
+        $player = $this->Playerss->get($id);
+        $this->set(compact('player'));
   
         
         
