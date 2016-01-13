@@ -5,9 +5,10 @@
 		//echo $this->Form->create('Filter', array('url' => array('controller' => 'players','button' => 'filter','class'=>'filter')));
 		//echo $this->Form->input('filtering',array('url' => "bit2.wiil.co/gcpw",'class'=>'filter','value'=>$filterPlayer,'label'=>'Filter:')); 
 		//echo $this->Form->end(array("label" => "Search", "class" => "submit small button")); 
+		echo $this->Form->label('Filter:');
 		echo $this->Form->create(null, ['url' => ['controller' => 'Players', 'action' => 'index']]);
-		echo $this->Form->text('filtering', ['class' => 'n','value' => $filterPlayer,'label'=>'Filter:']);
-		echo $this->Form->submit();
+		echo $this->Form->text('filtering', ['class' => 'n','value' => $filterPlayer]);
+		$this->Form->button('Submit Form', ['type' => 'submit']);
 		$this->Form->end();
 		?>
 		
