@@ -2,9 +2,16 @@
 	<div class="filter"><?php 
 			echo $this->Html->script('https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js');
 
-		echo $this->Form->create('Filter', array('url' => array('controller' => 'players','button' => 'filter','class'=>'filter')));
-		echo $this->Form->input('filtering',array('url' => "bit2.wiil.co/gcpw",'class'=>'filter','value'=>$filterPlayer,'label'=>'Filter:')); 
-		echo $this->Form->end(array("label" => "Search", "class" => "submit small button")); ?>
+		//echo $this->Form->create('Filter', array('url' => array('controller' => 'players','button' => 'filter','class'=>'filter')));
+		//echo $this->Form->input('filtering',array('url' => "bit2.wiil.co/gcpw",'class'=>'filter','value'=>$filterPlayer,'label'=>'Filter:')); 
+		//echo $this->Form->end(array("label" => "Search", "class" => "submit small button")); 
+		echo $this->Form->create(null, ['url' => ['controller' => 'Players', 'action' => 'index']]);
+		echo $this->Form->text('filtering', ['class' => 'n','value' => $filterPlayer,'label'=>'Filter:']);
+		echo $this->Form->submit();
+		$this->Form->end();
+		?>
+		
+		
 	</div>
 	<table cellpadding="0" cellspacing="0">
 	<tr  class="row_head">
