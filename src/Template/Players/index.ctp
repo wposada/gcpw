@@ -3,7 +3,7 @@
 			echo $this->Html->script('jquery-2.1.0');
 
 		echo $this->Form->create('Filter', array('url' => array('controller' => 'players','button' => 'filter','class'=>'filter')));
-		echo $this->Form->input('filtering',array('url' => 'bit2.wiil.co/gcpw','class'=>'filter','value'=>$filterPlayer,'label'=>'Filter:')); 
+		echo $this->Form->input('filtering',array('url' => "bit2.wiil.co/gcpw",'class'=>'filter','value'=>$filterPlayer,'label'=>'Filter:')); 
 		echo $this->Form->end(array("label" => __('Search'), "class" => "submit small button")); ?>
 	</div>
 	<table cellpadding="0" cellspacing="0">
