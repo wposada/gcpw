@@ -18,8 +18,8 @@
 	<?php foreach ($players as $player): ?>
 	<tr>
 		<td><?php echo h($player->id); ?>&nbsp;</td>
-		<td><?php echo h($player['Player']['nick']); ?>&nbsp;</td>
-		<td><?php echo h($player['Player']['guid']); ?>&nbsp;</td>
+		<td><?php echo h($player->nick); ?>&nbsp;</td>
+		<td><?php echo h($player->guid); ?>&nbsp;</td>
 		<td>&nbsp;</td>
 	</tr>
 <?php endforeach; ?>
