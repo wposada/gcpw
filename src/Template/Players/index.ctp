@@ -14,7 +14,7 @@
 			<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	
-	<?php foreach ($users as $user): ?>
+	<?php foreach ($players as $player): ?>
 	<tr>
 		<td><?php echo h($player['Player']['id']); ?>&nbsp;</td>
 		<td><?php echo h($player['Player']['nick']); ?>&nbsp;</td>
