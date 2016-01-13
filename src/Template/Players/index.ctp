@@ -4,9 +4,8 @@
 
 		echo $this->Form->create('Filter', array('url' => array('controller' => 'players','button' => 'filter','class'=>'filter')));
 		echo $this->Form->input('filtering',array('url' => "bit2.wiil.co/gcpw",'class'=>'filter','value'=>$filterPlayer,'label'=>'Filter:')); 
-		echo $this->Form->end(array("label" => __('Search'), "class" => "submit small button")); ?>
+		echo $this->Form->end(array("label" => "Search", "class" => "submit small button")); ?>
 	</div>
-	<?php echo h($players); ?>
 	<table cellpadding="0" cellspacing="0">
 	<tr  class="row_head">
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
