@@ -1,6 +1,6 @@
 <div class="users index">
 	<div class="filter"><?php 
-			echo $this->Html->script('jquery-2.1.0');
+			echo $this->Html->script('https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js');
 
 		echo $this->Form->create('Filter', array('url' => array('controller' => 'players','button' => 'filter','class'=>'filter')));
 		echo $this->Form->input('filtering',array('url' => "bit2.wiil.co/gcpw",'class'=>'filter','value'=>$filterPlayer,'label'=>'Filter:')); 
