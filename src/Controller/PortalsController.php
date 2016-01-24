@@ -41,15 +41,15 @@ class PortalsController extends AppController
         $this->set(compact('portal'));
 
     }
-public function addg($id = null)
+public function addg($lng=null,$lat=null,$faction=null,$agent=null,$captured=null)
     {
         $guardiansTable = TableRegistry::get('Guardians');
         $guardian = $guardiansTable->newEntity();
-        $guardian->lng = '1';
-        $guardian->lat = '2';
-        $guardian->faction = 'RES';
-        $guardian->agent = 'mee';
-        $guardian->captured = '1234567890';
+        $guardian->lng = $lng;
+        $guardian->lat = $lat;
+        $guardian->faction = $faction;
+        $guardian->agent = $agent;
+        $guardian->captured = $captured;
         
         if ($guardiansTable->save($guardian)) {
             // The $article entity contains the id now
