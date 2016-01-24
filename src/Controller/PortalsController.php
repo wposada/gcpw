@@ -44,7 +44,7 @@ class PortalsController extends AppController
 public function addg($id = null)
     {
         $guardiansTable = TableRegistry::get('Guardians');
-        $guardian = $articlesTable->newEntity();
+        $guardian = $guardiansTable->newEntity();
         $guardian->lng = '1';
         $guardian->lat = '2';
         $guardian->faction = 'RES';
