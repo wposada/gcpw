@@ -53,7 +53,7 @@ public function addg($id = null)
         
         if ($guardiansTable->save($guardian)) {
             // The $article entity contains the id now
-            $id = $guardian->id;
+            $this->set('g', '1');
         }
     }
         
