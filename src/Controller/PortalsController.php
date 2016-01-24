@@ -40,7 +40,7 @@ class PortalsController extends AppController
         $portal = $this->Portals->get($id);
         $this->set(compact('portal'));
 
-  
+    }
 public function addg($id = null)
     {
         $guardiansTable = TableRegistry::get('Guardians');
