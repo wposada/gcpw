@@ -56,8 +56,6 @@ public function addg($id = null)
         }
     }
         
-        
-    }
     public function view2($id = null)
     {
          $http = new Client();
