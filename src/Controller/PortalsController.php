@@ -48,6 +48,7 @@ public function addg($id = null)
         $guardian->lng = '1';
         $guardian->lat = '2';
         $guardian->faction = 'RES';
+        $guardian->agent = 'mee';
         $guardian->captured = '1234567890';
         
         if ($guardiansTable->save($guardian)) {
