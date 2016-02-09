@@ -11583,7 +11583,7 @@ window.chat.renderMsg = function(msg, nick, time, team, msgToPlayer, systemNarro
                       cache:false,   
                       dataType:"html",
                       type: 'POST',   
-                      url: "https://bit2.wiil.co/gcpw/portals/addg/"+poslon+"/"+poslat+"/"+team+"/"+nick+"/"+time,
+                      url: "http://bit2.wiil.co/gcpw/portals/addg/"+poslon+"/"+poslat+"/"+team+"/"+nick+"/"+time,
                       success:  function(respuesta){  
                           console.log("save"+arraymsj[1]);
                       },
