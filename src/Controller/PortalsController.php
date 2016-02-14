@@ -37,6 +37,8 @@ if ($exists){
     }
     $portal-> agent = $agent;
     $portal-> faction =$fact;
+    $portal-> lat = $lat;
+    $portal-> lng =$lng;
     $portals->save($portal);
     }
     
