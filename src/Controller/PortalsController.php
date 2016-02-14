@@ -28,7 +28,8 @@ class PortalsController extends AppController
     $conditions = array(
     'Portals.lat' => $lat,
     'Portals.lng' => $lng);
-if ($this->Portal->hasAny($conditions)){
+    $exists = $portals->exists($conditions);
+if ($exists){
         $portal = $portals->get($conditions);
         $portal-> agent = $agent;
         $portal-> faction =$fact;
