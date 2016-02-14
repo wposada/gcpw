@@ -21,7 +21,7 @@ class PortalsController extends AppController
         $this->set(compact('portals'));*/
     }
     
-    public function update($fact=null,$lng=null,$lat=null,$agent=null,$name=null,$address=null)
+    public function update($fact=null,$lng=null,$lat=null,$agent=null,$name=null,$address=null,$guid=null)
     {
 
     $portals = TableRegistry::get('Portals');
@@ -42,6 +42,7 @@ if ($exists){
     $portal-> faction =$fact;
     $portal-> lat = $lat;
     $portal-> lng =$lng;
+    $portal-> guid =$guid;
     $portals->save($portal);
     }
     
