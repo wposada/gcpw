@@ -33,9 +33,10 @@ if ($exists){
         $portal = $portals->get($conditions);
         $this->set('g', '1');
     }else{
+
+        $portal = $portals->newEntity();$this->set('g', '2');
         $portal-> name =$name;
         $portal-> addres =$addres;
-        $portal = $portals->newEntity();$this->set('g', '2');
     }
     $portal-> agent = $agent;
     $portal-> faction =$fact;
