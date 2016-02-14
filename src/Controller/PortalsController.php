@@ -21,14 +21,13 @@ class PortalsController extends AppController
         $this->set(compact('portals'));*/
     }
     
-    public function update($fact=null,$lng=null,$lat=null,$name=null)
+    public function update($fact=null,$lng=null,$lat=null,$agent=null)
     {
 
         $portals = TableRegistry::get('Portals');
-        $portal = $portals->get(array('Portals.lat'=>'4.766241','Portals.lng'=>'-74.025191'));
-        $portal-> agent = "123";
-        //$portal-> lat =$lat;
-        //$portal-> name =$name;
+        $portal = $portals->get(array('Portals.lat'=>$lat,'Portals.lng'=>$lng));
+        $portal-> agent = $agent;
+        $portal-> faction =$fact;
         $portals->save($portal);
         if ($portals->save($portal)) {
             // The $article entity contains the id now
