@@ -24,16 +24,21 @@ class PortalsController extends AppController
     public function update($fact=null,$lng=null,$lat=null,$agent=null)
     {
 
-        $portals = TableRegistry::get('Portals');
-        $portal = $portals->get(array('Portals.lat'=>$lat,'Portals.lng'=>$lng));
+    $portals = TableRegistry::get('Portals');
+    $conditions = array(
+    'Portals.lat' => $lat,
+    'Portals.lng' => $lng)
+    );
+if ($this->Portal->hasAny($conditions)){
+        $portal = $portals->get($conditions);
         $portal-> agent = $agent;
         $portal-> faction =$fact;
         $portals->save($portal);
-        if ($portals->save($portal,['checkExisting' => false])) {
-            // The $article entity contains the id now
-            $this->set('g', '1');
-        }      
-        //$this->set('g', '1');
+        $this->set('g', '1');
+    }else{
+        $this->set('g', '2');
+    }        
+
         
     }
     
