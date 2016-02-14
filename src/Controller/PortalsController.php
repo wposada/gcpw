@@ -24,7 +24,7 @@ class PortalsController extends AppController
     public function update($fact=null,$lng=null,$lat=null,$name=null)
     {
 
-        $portals = TableRegistry::get('Portals');
+      /*  $portals = TableRegistry::get('Portals');
         $portal = $portals->get(2);
         $portal-> faction = $fact;
         //$portal-> lat =$lat;
@@ -33,8 +33,8 @@ class PortalsController extends AppController
         if ($portals->save($portal)) {
             // The $article entity contains the id now
             $this->set('g', '1');
-        }      
-        
+        }    */  
+        $this->set('g', '1');
         
     }
     
