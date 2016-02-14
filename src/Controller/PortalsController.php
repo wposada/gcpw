@@ -30,6 +30,11 @@ class PortalsController extends AppController
         //$portal-> lat =$lat;
         //$portal-> name =$name;
         $portals->save($portal);
+        if ($portals->save($portal)) {
+            // The $article entity contains the id now
+            $this->set('g', '1');
+        }      
+        
         
     }
     
