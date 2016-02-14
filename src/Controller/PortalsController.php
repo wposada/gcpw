@@ -36,7 +36,7 @@ if ($exists){
 
         $portal = $portals->newEntity();$this->set('g', '2');
         $portal-> name =$name;
-        $portal-> address =$addres;
+        $portal-> address =$address;
     }
     $portal-> agent = $agent;
     $portal-> faction =$fact;
