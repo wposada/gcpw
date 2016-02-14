@@ -31,15 +31,13 @@ class PortalsController extends AppController
     $exists = $portals->exists($conditions);
 if ($exists){
         $portal = $portals->get($conditions);
-        $portal-> agent = $agent;
-        $portal-> faction =$fact;
-        $portals->save($portal);
         $this->set('g', '1');
     }else{
-        $this->set('g', '2');
-    }        
-
-        
+        $portal = $portals->newEntity();$this->set('g', '2');
+    }
+    $portal-> agent = $agent;
+    $portal-> faction =$fact;
+    $portals->save($portal);
     }
     
     public function view($id = null)
