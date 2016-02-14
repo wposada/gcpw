@@ -1,70 +1,33 @@
-2015-06-08 04:45:46 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
-2015-06-08 04:57:34 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
-2015-06-08 04:57:41 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
-2015-06-08 04:57:44 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
-2015-06-08 04:59:49 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
-2015-06-08 04:59:54 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
-2015-06-08 05:05:40 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
-2015-06-08 05:07:09 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
-2015-06-08 05:31:39 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
-2015-06-08 13:16:55 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
-2015-06-08 13:22:51 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
-2015-06-08 13:25:52 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
-2015-06-08 17:16:58 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
-2015-06-08 17:18:39 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
-2015-06-08 17:18:41 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
-2015-06-08 22:52:45 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
-2015-06-08 22:56:28 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
-2015-06-08 23:01:56 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
-2015-06-08 23:02:13 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
-2015-06-08 23:35:57 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
-2015-06-08 23:42:18 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
-2015-06-09 00:11:47 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
-2016-01-06 20:24:27 Error: [PDOException] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
-Request URL: /gcpw/portals
+
+2016-02-14 00:46:59 Error: [RuntimeException] Cannot insert row, some of the primary key values are missing. Got (, , , ), expecting (captured, lng, lat, agent)
+Request URL: /gcpw/portals/addg
 Stack Trace:
-#0 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/Database/Driver/PDODriverTrait.php(48): PDO->__construct('mysql:host=loca...', 'root', 'K1t8HwwS', Array)
-#1 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/Database/Driver/Mysql.php(89): Cake\Database\Driver\Mysql->_connect('mysql:host=loca...', Array)
-#2 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/Database/Schema/BaseSchema.php(46): Cake\Database\Driver\Mysql->connect()
-#3 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/Database/Dialect/MysqlDialectTrait.php(62): Cake\Database\Schema\BaseSchema->__construct(Object(Cake\Database\Driver\Mysql))
-#4 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/Database/Schema/Collection.php(52): Cake\Database\Driver\Mysql->schemaDialect()
-#5 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/Database/Schema/CachedCollection.php(44): Cake\Database\Schema\Collection->__construct(Object(Cake\Database\Connection))
-#6 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/Database/Connection.php(319): Cake\Database\Schema\CachedCollection->__construct(Object(Cake\Database\Connection), true)
-#7 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/ORM/Table.php(425): Cake\Database\Connection->schemaCollection()
-#8 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/ORM/Query.php(141): Cake\ORM\Table->schema()
-#9 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/ORM/Query.php(123): Cake\ORM\Query->addDefaultTypes(Object(Cake\ORM\Table))
-#10 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/ORM/Table.php(1164): Cake\ORM\Query->__construct(Object(Cake\Database\Connection), Object(Cake\ORM\Table))
-#11 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/ORM/Table.php(883): Cake\ORM\Table->query()
-#12 /opt/bitnami/apache2/htdocs/gcpw/src/Controller/PortalsController.php(9): Cake\ORM\Table->find('all')
-#13 [internal function]: App\Controller\PortalsController->index()
-#14 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/Controller/Controller.php(410): call_user_func_array(Array, Array)
-#15 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
-#16 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\PortalsController))
-#17 /opt/bitnami/apache2/htdocs/gcpw/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#18 {main}
+#0 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/ORM/Table.php(1382): Cake\ORM\Table->_insert(Object(Cake\ORM\Entity), Array)
+#1 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/ORM/Table.php(1313): Cake\ORM\Table->_processSave(Object(Cake\ORM\Entity), Object(ArrayObject))
+#2 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/Database/Connection.php(561): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#3 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/ORM/Table.php(1314): Cake\Database\Connection->transactional(Object(Closure))
+#4 /opt/bitnami/apache2/htdocs/gcpw/src/Controller/PortalsController.php(59): Cake\ORM\Table->save(Object(Cake\ORM\Entity))
+#5 [internal function]: App\Controller\PortalsController->addg()
+#6 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/Controller/Controller.php(410): call_user_func_array(Array, Array)
+#7 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#8 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\PortalsController))
+#9 /opt/bitnami/apache2/htdocs/gcpw/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#10 {main}
 
 
-2016-01-06 20:27:11 Error: [PDOException] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
-Request URL: /gcpw/portals
+2016-02-14 00:57:35 Error: [RuntimeException] Cannot insert row, some of the primary key values are missing. Got (, , , ), expecting (captured, lng, lat, agent)
+Request URL: /gcpw/portals/addg
 Stack Trace:
-#0 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/Database/Driver/PDODriverTrait.php(48): PDO->__construct('mysql:host=loca...', 'root', 'm,0j0M3=.6Si', Array)
-#1 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/Database/Driver/Mysql.php(89): Cake\Database\Driver\Mysql->_connect('mysql:host=loca...', Array)
-#2 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/Database/Schema/BaseSchema.php(46): Cake\Database\Driver\Mysql->connect()
-#3 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/Database/Dialect/MysqlDialectTrait.php(62): Cake\Database\Schema\BaseSchema->__construct(Object(Cake\Database\Driver\Mysql))
-#4 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/Database/Schema/Collection.php(52): Cake\Database\Driver\Mysql->schemaDialect()
-#5 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/Database/Schema/CachedCollection.php(44): Cake\Database\Schema\Collection->__construct(Object(Cake\Database\Connection))
-#6 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/Database/Connection.php(319): Cake\Database\Schema\CachedCollection->__construct(Object(Cake\Database\Connection), true)
-#7 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/ORM/Table.php(425): Cake\Database\Connection->schemaCollection()
-#8 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/ORM/Query.php(141): Cake\ORM\Table->schema()
-#9 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/ORM/Query.php(123): Cake\ORM\Query->addDefaultTypes(Object(Cake\ORM\Table))
-#10 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/ORM/Table.php(1164): Cake\ORM\Query->__construct(Object(Cake\Database\Connection), Object(Cake\ORM\Table))
-#11 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/ORM/Table.php(883): Cake\ORM\Table->query()
-#12 /opt/bitnami/apache2/htdocs/gcpw/src/Controller/PortalsController.php(9): Cake\ORM\Table->find('all')
-#13 [internal function]: App\Controller\PortalsController->index()
-#14 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/Controller/Controller.php(410): call_user_func_array(Array, Array)
-#15 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
-#16 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\PortalsController))
-#17 /opt/bitnami/apache2/htdocs/gcpw/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#18 {main}
+#0 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/ORM/Table.php(1382): Cake\ORM\Table->_insert(Object(Cake\ORM\Entity), Array)
+#1 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/ORM/Table.php(1313): Cake\ORM\Table->_processSave(Object(Cake\ORM\Entity), Object(ArrayObject))
+#2 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/Database/Connection.php(561): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#3 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/ORM/Table.php(1314): Cake\Database\Connection->transactional(Object(Closure))
+#4 /opt/bitnami/apache2/htdocs/gcpw/src/Controller/PortalsController.php(59): Cake\ORM\Table->save(Object(Cake\ORM\Entity))
+#5 [internal function]: App\Controller\PortalsController->addg()
+#6 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/Controller/Controller.php(410): call_user_func_array(Array, Array)
+#7 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#8 /opt/bitnami/apache2/htdocs/gcpw/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\PortalsController))
+#9 /opt/bitnami/apache2/htdocs/gcpw/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#10 {main}
 
 
