@@ -29,7 +29,7 @@ class PortalsController extends AppController
         $portal-> agent = $agent;
         $portal-> faction =$fact;
         $portals->save($portal);
-        if ($portals->save($portal)) {
+        if ($portals->save($portal,['checkExisting' => false])) {
             // The $article entity contains the id now
             $this->set('g', '1');
         }      
