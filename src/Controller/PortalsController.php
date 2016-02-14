@@ -27,8 +27,7 @@ class PortalsController extends AppController
     $portals = TableRegistry::get('Portals');
     $conditions = array(
     'Portals.lat' => $lat,
-    'Portals.lng' => $lng)
-    );
+    'Portals.lng' => $lng);
 if ($this->Portal->hasAny($conditions)){
         $portal = $portals->get($conditions);
         $portal-> agent = $agent;
