@@ -21,7 +21,7 @@ class PortalsController extends AppController
         $this->set(compact('portals'));*/
     }
     
-    public function update($fact=null,$lng=null,$lat=null,$agent=null)
+    public function update($fact=null,$lng=null,$lat=null,$agent=null,$name=null,$address=null)
     {
 
     $portals = TableRegistry::get('Portals');
@@ -33,6 +33,8 @@ if ($exists){
         $portal = $portals->get($conditions);
         $this->set('g', '1');
     }else{
+        $portal-> name =$name;
+        $portal-> addres =$addres;
         $portal = $portals->newEntity();$this->set('g', '2');
     }
     $portal-> agent = $agent;
