@@ -1,8 +1,4 @@
 <div class="users index">
-<?php	$paginator->options(
-   array('url' => $this->params['pass'] + $this->params['named'])
-);
-?>
 	<div class="filter"><?php 
 			echo $this->Html->script('https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js');
 
