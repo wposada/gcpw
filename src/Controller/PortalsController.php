@@ -8,7 +8,7 @@ class PortalsController extends AppController
     {
              $this->paginate = array(
             'conditions' => array(''),
-            'limit' => 10,
+            'limit' => 80,
             'order' => array('id' => 'desc')
             );
                  
