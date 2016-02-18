@@ -1,17 +1,7 @@
 
 <?php  
-/*$options = array(
-    'url' => array_merge($url, 'filtering', 'filtering'),
-    'model' => $this->defaultModel);
-$this->Paginator->options($options);*/
-$this->Paginator->options(array(
-  'convertKeys' => array('your', 'keys', 'here')
-));
-
 $this->Paginator->options(array('url' => array("?"=>array("filtering"=>"a"))));
-
 ?>
-<?= h($_f); ?>
 <div class="users index">
 	<div class="filter"><?php 
 			echo $this->Html->script('https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js');
@@ -21,7 +11,7 @@ $this->Paginator->options(array('url' => array("?"=>array("filtering"=>"a"))));
 		//echo $this->Form->end(array("label" => "Search", "class" => "submit small button")); 
 		echo $this->Form->label('Filter:');
 		echo $this->Form->create(null, ['url' => ['controller' => 'Players', 'action' => 'index']]);
-		echo $this->Form->text('filtering', ['class' => 'n','value' => $filterPlayer]);
+		echo $this->Form->text('filtering', ['class' => 'n','value' => $_f]);
 		$this->Form->button('Submit Form', ['type' => 'submit']);
 		$this->Form->end();
 		?>
