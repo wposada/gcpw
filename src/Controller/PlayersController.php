@@ -7,7 +7,7 @@ class PlayersController extends AppController
        public function index($filtering=null)
     {
         $this -> Players -> recursive = 0;
-        $filtering=(empty($this->request['url']['filtering']))?$this->request->data('filtering'):$this->request['url']['filtering'];
+        $filtering=(empty($this->request->data('filtering')))?$this->request['url']['filtering']:$this->request->data('filtering');
         $this->set('_f', $filtering);
 	$this -> set("filterPlayer",'');
 	$this->paginate = array('paramType' => 'querystring',
