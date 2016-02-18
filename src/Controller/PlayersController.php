@@ -10,7 +10,7 @@ class PlayersController extends AppController
         if(!$filtering){
 			$this -> set("filterPlayer",'');
 			$this->paginate = array(
-		          'conditions' => array(''),
+		          'conditions' => array("User.first_name LIKE" => "%" . $filtering . "%"),
             		  'limit' => 5,
             		  'order' => array('id' => 'desc')
             );
