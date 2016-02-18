@@ -26,8 +26,8 @@ class PlayersController extends AppController
 		else{
 			$this -> set("filterPlayer",'');
 			$this->paginate = array(
-		          'conditions' => array("Players.nick LIKE" => "%w" . $filtering . "%"),
-            		  'limit' => 5,
+		          'conditions' => array("Players.nick LIKE" => "%" . $filtering . "%"),
+            		  'limit' => 3,
             		  'order' => array('id' => 'desc'));
 		$players = $this->paginate('Players');
        		// pass the value to our view.ctp
