@@ -1,9 +1,9 @@
 
 <?php  
-$options = array(
+/*$options = array(
     'url' => array_merge($url, 'filtering', 'filtering'),
     'model' => $this->defaultModel);
-$this->Paginator->options($options);
+$this->Paginator->options($options);*/
 
 ?>
 <div class="users index">
