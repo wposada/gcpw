@@ -9,31 +9,17 @@ class PlayersController extends AppController
         $this -> Players -> recursive = 0;
         $filtering = $this->request->data('filtering');
         $this->set('_f', $filtering);
-        if(1){
-			$this -> set("filterPlayer",'');
-			$this->paginate = array(
+	$this -> set("filterPlayer",'');
+	$this->paginate = array(
 		          'conditions' => array("Players.nick LIKE" => "%" . $filtering . "%"),
             		  'limit' => 5,
-            		  'order' => array('id' => 'desc')
-            );
-                // we are using the 'User' model
-    		$players = $this->paginate('Players');
-       		// pass the value to our view.ctp
-    		$this->set('players', $players);
-
-			//$this -> set("players", $this -> Paginator -> paginate('Players', array('Players.id >' => '0')));
-		}
-		else{
-			$this -> set("filterPlayer",'');
-			$this->paginate = array(
-		          'conditions' => array("Players.nick LIKE" => "%" . $filtering . "%"),
-            		  'limit' => 3,
             		  'order' => array('id' => 'desc'));
-		$players = $this->paginate('Players');
-       		// pass the value to our view.ctp
-    		$this->set('players', $players);
+        // we are using the 'User' model
+    	$players = $this->paginate('Players');
+       	// pass the value to our view.ctp
+    	$this->set('players', $players);
+	//$this -> set("players", $this -> Paginator -> paginate('Players', array('Players.id >' => '0')));
 
-		}
     }
     
     
