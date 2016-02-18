@@ -1,3 +1,10 @@
+<?php 
+$options = array(
+    'url' => array_merge($url, $this->params['named'], $this->params['pass']),
+    'model' => $this->defaultModel
+);
+$this->Paginator->options($options);
+?>
 <div class="users index">
 	<div class="filter"><?php 
 			echo $this->Html->script('https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js');
