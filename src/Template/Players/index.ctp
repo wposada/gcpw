@@ -31,7 +31,7 @@ $this->Paginator->options(array('url' => array("?"=>array("filtering"=>"a"))));
 		<td><?php echo h($player->id); ?>&nbsp;</td>
 		<td><?php echo h($player->nick); ?>&nbsp;</td>
 		<td><?php echo h($player->guid); ?>&nbsp;</td>
-		<td><?php echo $this->Html->link('link', "http://www.google.com");?></td>
+		<td><?php echo $this->Html->link('link', "http://api.botnyx.com/player/log/".$player->guid,array('target' => '_blank'));?></td>
 	</tr>
 <?php endforeach; ?>
 	</table>
