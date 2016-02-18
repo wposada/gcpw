@@ -8,7 +8,7 @@ class PlayersController extends AppController
     {
         $this -> Players -> recursive = 0;
         (empty($_POST['action'])) ? 'default' : $_POST['action']
-        $filtering=$this->(empty(request['url']['filtering']))?$this->request->data('filtering'):request['url']['filtering'];
+        $filtering=(empty($this->request['url']['filtering']))?$this->request->data('filtering'):$this->request['url']['filtering'];
         $this->set('_f', $filtering);
 	$this -> set("filterPlayer",'');
 	$this->paginate = array('paramType' => 'querystring',
