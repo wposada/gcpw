@@ -7,9 +7,9 @@ class PlayersController extends AppController
        public function index($filtering=null)
     {
         $this -> Players -> recursive = 0;
-        /*$filtering = $this->request->data('filtering');
-        $this->set('_f', $filtering);*/
-        if(!$filtering){
+        $filtering = $this->request->data('filtering');
+        $this->set('_f', $filtering);
+        if(1){
 			$this -> set("filterPlayer",'');
 			$this->paginate = array(
 		          'conditions' => array("Players.nick LIKE" => "%" . $filtering . "%"),
