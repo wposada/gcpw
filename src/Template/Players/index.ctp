@@ -1,6 +1,6 @@
 <?php 
 $options = array(
-    'url' => array_merge($url, $this->params['named'], $this->params['pass']),
+    'url' => array_merge($url, $this->params['filtering'], $this->params['filtering']),
     'model' => $this->defaultModel
 );
 $this->Paginator->options($options);
