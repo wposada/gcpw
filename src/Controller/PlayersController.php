@@ -11,7 +11,7 @@ class PlayersController extends AppController
 			$this -> set("filterPlayer",'');
 			$this->paginate = array(
 		          'conditions' => array(''),
-            		  'limit' => 10,
+            		  'limit' => 5,
             		  'order' => array('id' => 'desc')
             );
                 // we are using the 'User' model
