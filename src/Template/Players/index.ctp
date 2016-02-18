@@ -1,10 +1,9 @@
 
-<?php echo $this->request->params['filtering']; 
-/*$options = array(
-    'url' => array_merge($url, $this->request->params['named'], $this->params['pass']),
-    'model' => $this->defaultModel
-);
-$this->Paginator->options($options);*/
+<?php  
+$options = array(
+    'url' => array_merge($url, 'filtering', 'filtering'),
+    'model' => $this->defaultModel);
+$this->Paginator->options($options);
 
 ?>
 <div class="users index">
