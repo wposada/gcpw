@@ -1,5 +1,5 @@
 
-<?php echo $this->request->params['named']; 
+<?php echo $this->request->params['filtering']; 
 /*$options = array(
     'url' => array_merge($url, $this->request->params['named'], $this->params['pass']),
     'model' => $this->defaultModel
