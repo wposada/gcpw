@@ -4,6 +4,9 @@
     'url' => array_merge($url, 'filtering', 'filtering'),
     'model' => $this->defaultModel);
 $this->Paginator->options($options);*/
+$this->Paginator->options(array(
+  'convertKeys' => array('your', 'keys', 'here')
+));
 
 ?>
 <div class="users index">
