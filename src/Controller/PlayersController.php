@@ -19,7 +19,7 @@ class PlayersController extends AppController
        	// pass the value to our view.ctp
     	$this->set('players', $players);
 	//$this -> set("players", $this -> Paginator -> paginate('Players', array('Players.id >' => '0')));
-
+	$this->paginate['your'] = "foo";
     }
     
     
