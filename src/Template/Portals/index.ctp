@@ -14,8 +14,10 @@
              // in the sort method, ther first parameter is the same as the column name in our table
              // the second parameter is the header label we want to display in the view
             echo "<th>" . $paginator->sort('id', 'ID') . "</th>";
-            echo "<th>" . $paginator->sort('guid', 'guid') . "</th>";
+            //echo "<th>" . $paginator->sort('guid', 'guid') . "</th>";
              echo "<th>" . $paginator->sort('name', 'Name') . "</th>";
+             echo "<th>" . $paginator->sort('address', 'Address') . "</th>";
+             echo "<th>" . $paginator->sort('agent', 'Agent') . "</th>";
              echo "<th>" . $paginator->sort('lng', 'Lng') . "</th>";
              echo "<th>" . $paginator->sort('lat', 'Lat') . "</th>";
          echo "</tr>";
@@ -24,8 +26,10 @@
          foreach( $portals as $portal ){
              echo "<tr>";
                  echo "<td>$portal->id</td>";
-                 echo "<td>$portal->guid</td>";
+                 //echo "<td>$portal->guid</td>";
                  echo "<td>$portal->name</td>";
+                 echo "<td>$portal->address</td>";
+                 echo "<td>$portal->agent</td>";
                  echo "<td>$portal->lng</td>";
                  echo "<td>$portal->lat</td>";
              echo "</tr>";
