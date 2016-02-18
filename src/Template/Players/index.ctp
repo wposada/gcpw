@@ -8,7 +8,7 @@ $this->Paginator->options(array(
   'convertKeys' => array('your', 'keys', 'here')
 ));
 
-$this->Paginator->options(array('url' => array("?"=>array("hola"=>"111"))));
+$this->Paginator->options(array('url' => array("?"=>array("filtering"=>"a"))));
 
 ?>
 <div class="users index">
