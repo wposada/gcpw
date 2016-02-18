@@ -1,5 +1,5 @@
 
-<?php echo $this->params['controller']; 
+<?php echo $this->request->params['controller']; 
 /*$options = array(
     'url' => array_merge($url, $this->request->params['named'], $this->params['pass']),
     'model' => $this->defaultModel
