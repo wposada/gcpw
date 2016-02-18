@@ -5,7 +5,6 @@
 );
 $this->Paginator->options($options);*/
 <?php echo $this->params['controller']; ?>
-?>
 <div class="users index">
 	<div class="filter"><?php 
 			echo $this->Html->script('https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js');
