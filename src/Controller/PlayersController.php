@@ -25,7 +25,7 @@ class PlayersController extends AppController
 		}
 		else{
 		    $conditions=array();
-			$likes[] = array("User.first_name LIKE" => "%" . $filtering . "%");
+			$likes[] = array("Players.nick LIKE" => "%" . $filtering . "%");
 			$conditions["OR"] = $likes;
 			$this -> set("filterPlayer",$filtering);
 			$this -> set("players", $this -> Paginator -> paginate('Players', $conditions));
