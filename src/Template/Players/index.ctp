@@ -45,7 +45,6 @@
 	?>
 	</div>
 </div>
-<?= h($_f); ?>
 <script type="text/javascript">
 $(document).ready(function(){
 	$('#FilterFiltering').parent().addClass('filter');
