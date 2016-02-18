@@ -24,11 +24,14 @@ class PlayersController extends AppController
 			//$this -> set("players", $this -> Paginator -> paginate('Players', array('Players.id >' => '0')));
 		}
 		else{
-		    $conditions=array();
-			$likes[] = array("Players.nick LIKE" => "%" . $filtering . "%");
-			$conditions["OR"] = $likes;
-			$this -> set("filterPlayer",$filtering);
-			$this -> set("players", $this -> Paginator -> paginate('Players', $conditions));
+			$this -> set("filterPlayer",'');
+			$this->paginate = array(
+		          'conditions' => array("Players.nick LIKE" => "%w" . $filtering . "%"),
+            		  'limit' => 5,
+            		  'order' => array('id' => 'desc'));
+		$players = $this->paginate('Players');
+       		// pass the value to our view.ctp
+    		$this->set('players', $players);
 
 		}
     }
