@@ -7,7 +7,6 @@ class PlayersController extends AppController
        public function index($filtering=null)
     {
         $this -> Players -> recursive = 0;
-        (empty($_POST['action'])) ? 'default' : $_POST['action']
         $filtering=(empty($this->request['url']['filtering']))?$this->request->data('filtering'):$this->request['url']['filtering'];
         $this->set('_f', $filtering);
 	$this -> set("filterPlayer",'');
