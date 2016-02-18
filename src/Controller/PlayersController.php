@@ -10,7 +10,7 @@ class PlayersController extends AppController
         $filtering = $this->request->data('filtering');
         $this->set('_f', $filtering);
 	$this -> set("filterPlayer",'');
-	$this->paginate = array(
+	$this->paginate = array('paramType' => 'querystring',
 		          'conditions' => array("Players.nick LIKE" => "%" . $filtering . "%"),
             		  'limit' => 5,
             		  'order' => array('id' => 'desc'));
