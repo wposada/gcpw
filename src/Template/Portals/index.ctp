@@ -36,7 +36,7 @@ $this->Paginator->options(array('url' => array("?"=>array("filtering"=>$_f))));
 		<td><?php echo h($portal->agent); ?>&nbsp;</td>
 		<td><?php echo h($portal->lng); ?>&nbsp;</td>
 		<td><?php echo h($portal->lat); ?>&nbsp;</td>		
-		<td><?php echo $this->Html->link('link', "http://api.botnyx.com/player/log/".$portal->lat,array('target' => '_blank'));?></td>
+		<td><?php echo $this->Html->link('link', "https://www.ingress.com/intel?ll=".$portal->lat.",".$portal->lng."&z=17&pll=".$portal->lat.",".$portal->lng,array('target' => '_blank'));?></td>
 	</tr>
 <?php endforeach; ?>
 	</table>
