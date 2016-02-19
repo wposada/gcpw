@@ -1,5 +1,5 @@
 <?php  
-$this->Paginator->options(array('url' => array("?"=>array("filtering"=>"a"))));
+$this->Paginator->options(array('url' => array("?"=>array("filtering"=>$_f))));
 ?>
 <div class="users index">
 	<div class="filter"><?php 
