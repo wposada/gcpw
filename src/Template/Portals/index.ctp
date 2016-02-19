@@ -1,72 +1,60 @@
-<?php
- // so we use the paginator object the shorter way.
- // instead of using '$this->Paginator' everytime, we'll use '$paginator'
- $paginator = $this->Paginator;
-  
- if($portals){
-  
-     //creating our table
-     echo "<table>";
-  
-         // our table header, we can sort the data user the paginator sort() method!
-         echo "<tr>";
-          
-             // in the sort method, ther first parameter is the same as the column name in our table
-             // the second parameter is the header label we want to display in the view
-            echo "<th>" . $paginator->sort('id', 'ID') . "</th>";
-            //echo "<th>" . $paginator->sort('guid', 'guid') . "</th>";
-             echo "<th>" . $paginator->sort('name', 'Name') . "</th>";
-             echo "<th>" . $paginator->sort('address', 'Address') . "</th>";
-             echo "<th>" . $paginator->sort('agent', 'Agent') . "</th>";
-             echo "<th>" . $paginator->sort('lng', 'Lng') . "</th>";
-             echo "<th>" . $paginator->sort('lat', 'Lat') . "</th>";
-         echo "</tr>";
-          
-         // loop through the user's records
-         foreach( $portals as $portal ){
-             echo "<tr>";
-                 echo "<td>$portal->id</td>";
-                 //echo "<td>$portal->guid</td>";
-                 echo "<td>$portal->name</td>";
-                 echo "<td>$portal->address</td>";
-                 echo "<td>$portal->agent</td>";
-                 echo "<td>$portal->lng</td>";
-                 echo "<td>$portal->lat</td>";
-             echo "</tr>";
-         }
-          
-     echo "</table>";
-  
-     // pagination section
-   echo "<div class='paging'>";
-  
-         // the 'first' page button
-         echo $paginator->first("First");
-          
-         // 'prev' page button, 
-         // we can check using the paginator hasPrev() method if there's a previous page
-         // save with the 'next' page button
-         if($paginator->hasPrev()){
-             echo $paginator->prev("Prev");
-         }
-          
-         // the 'number' page buttons
-         echo $paginator->numbers(array('modulus' => 2));
-         
-         // for the 'next' button
-        if($paginator->hasNext()){
-             echo $paginator->next("Next");
-         }
-          
-         // the 'last' page button
-         echo $paginator->last("Last");
-      
-     echo "</div>";
-      
- }
-  
- // tell the user there's no records found
- else{
-     echo "No Portals found.";
- }
- ?>
+<?php  
+$this->Paginator->options(array('url' => array("?"=>array("filtering"=>"a"))));
+?>
+<div class="users index">
+	<div class="filter"><?php 
+			echo $this->Html->script('https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js');
+		//echo $this->Form->create('Filter', array('url' => array('controller' => 'players','button' => 'filter','class'=>'filter')));
+		//echo $this->Form->input('filtering',array('url' => "bit2.wiil.co/gcpw",'class'=>'filter','value'=>$filterPlayer,'label'=>'Filter:')); 
+		//echo $this->Form->end(array("label" => "Search", "class" => "submit small button")); 
+		echo $this->Form->label('Filter:');
+		echo $this->Form->create(null, ['url' => ['controller' => 'Portals', 'action' => 'index']]);
+		echo $this->Form->text('filtering', ['class' => 'n','value' => $_f]);
+		echo $this->Form->button('Submit Form', ['type' => 'submit']);
+		$this->Form->end();
+		?>
+		
+		
+	</div>
+	<table cellpadding="0" cellspacing="0">
+	<tr  class="row_head">
+	
+			<th><?php echo $this->Paginator->sort('id', 'ID'); ?></th>
+			<th><?php echo $this->Paginator->sort('name', 'Name'); ?></th>
+			<th><?php echo $this->Paginator->sort('address', 'Address'); ?></th>
+			<th><?php echo $this->Paginator->sort('agent', 'Agent'); ?></th>
+			<th><?php echo $this->Paginator->sort('lng', 'Lng'); ?></th>
+			<th><?php echo $this->Paginator->sort('lat', 'Lat'); ?></th>
+			<th class="actions"><?php echo __('Actions'); ?></th>
+	</tr>
+	
+	<?php foreach ($portals as $portal): ?>
+	<tr>
+		<td><?php echo h($portal->id); ?>&nbsp;</td>
+		<td><?php echo h($portal->name); ?>&nbsp;</td>
+		<td><?php echo h($portal->addres); ?>&nbsp;</td>
+		<td><?php echo h($portal->agent); ?>&nbsp;</td>
+		<td><?php echo h($portal->lng); ?>&nbsp;</td>
+		<td><?php echo h($portal->lat); ?>&nbsp;</td>		
+		<td><?php echo $this->Html->link('link', "http://api.botnyx.com/player/log/".$portal->lat,array('target' => '_blank'));?></td>
+	</tr>
+<?php endforeach; ?>
+	</table>
+	<div class="paging">
+	<?php
+	
+		echo $this->Paginator->prev('< ' . __('ant'), array(), null, array('class' => 'prev disabled'));
+		echo $this->Paginator->numbers(array('separator' => ''));
+		echo $this->Paginator->next(__('sig') . ' >', array(), null, array('class' => 'next disabled'));
+		echo $this->Paginator->counter(
+    'Page {{page}} of {{pages}}, showing {{current}} records out of
+     {{count}} total, starting on record {{start}}, ending on {{end}}'
+);
+	?>
+	</div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#FilterFiltering').parent().addClass('filter');
+});
+</script>
