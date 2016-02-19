@@ -16,7 +16,7 @@ public function index($filtering=null)
             		  'limit' => 15,
             		  'order' => array('id' => 'desc'));
         // we are using the 'User' model
-    	$portals = $this->paginate('Players');
+    	$portals = $this->paginate('Portals');
        	// pass the value to our view.ctp
     	$this->set('portals', $portals);
     }
