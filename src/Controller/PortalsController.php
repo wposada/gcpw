@@ -4,7 +4,24 @@ use Cake\Network\Http\Client;
 use Cake\ORM\TableRegistry;
 class PortalsController extends AppController
 {
-    public function index()
+    
+public function index($filtering=null)
+    {
+    $this -> Portals -> recursive = 0;
+    $filtering=(empty($this->request->data('filtering')))?$this->request['url']['filtering']:$this->request->data('filtering');
+    $this->set('_f', $filtering);
+	$this -> set("filterPlayer",'');
+	$this->paginate = array('paramType' => 'querystring',
+		          'conditions' => array("Portals.name LIKE" => "%" . $filtering . "%"),
+            		  'limit' => 15,
+            		  'order' => array('id' => 'desc'));
+        // we are using the 'User' model
+    	$portals = $this->paginate('Players');
+       	// pass the value to our view.ctp
+    	$this->set('portals', $portals);
+    }
+    
+    public function index2()
     {
              $this->paginate = array(
             'conditions' => array(''),
