@@ -32,7 +32,7 @@ $this->Paginator->options(array('url' => array("?"=>array("filtering"=>$_f))));
 	<tr>
 		<td><?php echo h($portal->id); ?>&nbsp;</td>
 		<td><?php echo h($portal->name); ?>&nbsp;</td>
-		<td><?php echo h($portal->addres); ?>&nbsp;</td>
+		<td><?php echo h($portal->address); ?>&nbsp;</td>
 		<td><?php echo h($portal->agent); ?>&nbsp;</td>
 		<td><?php echo h($portal->lng); ?>&nbsp;</td>
 		<td><?php echo h($portal->lat); ?>&nbsp;</td>		
