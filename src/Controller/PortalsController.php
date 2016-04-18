@@ -86,6 +86,22 @@ public function addg($lng=null,$lat=null,$faction=null,$agent=null,$captured=nul
             $this->set('g', '1');
         }
     }
+public function addmus($faction=null,$agent=null,$captured=null,$mus=0)
+    {
+        $musTable = TableRegistry::get('mus');
+        $mu = $musTable->newEntity();
+        $mu->lng = $lng;
+        $mu->lat = $lat;
+        $mu->faction = $faction;
+        $mu->agent = $agent;
+        $mu->captured = $captured;
+        
+        if ($musTable->save($mu)) {
+            // The $article entity contains the id now
+            $this->set('g', '1');
+        }
+    }    
+    
         
     public function view2($id = null)
     {
