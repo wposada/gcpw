@@ -90,12 +90,10 @@ public function addmus($faction=null,$agent=null,$captured=null,$mus=0)
     {
         $musTable = TableRegistry::get('mus');
         $mu = $musTable->newEntity();
-        $mu->lng = $lng;
-        $mu->lat = $lat;
         $mu->faction = $faction;
         $mu->agent = $agent;
         $mu->captured = $captured;
-        
+        $mu->mus = $mus;
         if ($musTable->save($mu)) {
             // The $article entity contains the id now
             $this->set('g', '1');
