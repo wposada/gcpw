@@ -99,6 +99,20 @@ public function addmus($faction=null,$agent=null,$captured=null,$mus=0)
             $this->set('g', '1');
         }
     }    
+    public function time()
+    {
+        /*$musTable = TableRegistry::get('mus');
+        $mu = $musTable->newEntity();
+        $mu->faction = $faction;
+        $mu->agent = $agent;
+        $mu->captured = $captured;
+        $mu->mus = $mus;*/
+        /*if ($musTable->save($mu)) {
+            // The $article entity contains the id now
+            $this->set('g', '1');
+        }*/
+        $this->set('g', 'time');
+    } 
     
         
     public function view2($id = null)
