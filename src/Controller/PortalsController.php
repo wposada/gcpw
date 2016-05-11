@@ -111,7 +111,8 @@ public function addmus($faction=null,$agent=null,$captured=null,$mus=0)
             // The $article entity contains the id now
             $this->set('g', '1');
         }*/
-        $vari="asdasd";
+        $result = $this->Portal->query("SELECT * FROM portals limit 2");
+        $vari=print_r($result,0);
         $this->set('g', $vari);
     } 
     
