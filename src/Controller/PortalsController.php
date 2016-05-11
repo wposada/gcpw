@@ -111,7 +111,7 @@ public function addmus($faction=null,$agent=null,$captured=null,$mus=0)
             // The $article entity contains the id now
             $this->set('g', '1');
         }*/
-        $vari=Configure::version();
+        $vari="asdasd";
         $this->set('g', $vari);
     } 
     
