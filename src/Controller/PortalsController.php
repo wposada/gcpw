@@ -113,7 +113,7 @@ public function addmus($faction=null,$agent=null,$captured=null,$mus=0)
         }*/
         $result = $this->Portals->query("SELECT * FROM portals limit 2",false);
         $vari=print_r($result,1);
-        $this->set('g', $vari);
+        $this->set('g', $result);
     } 
     
         
