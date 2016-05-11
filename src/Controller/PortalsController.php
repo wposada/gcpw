@@ -99,7 +99,7 @@ public function addmus($faction=null,$agent=null,$captured=null,$mus=0)
             $this->set('g', '1');
         }
     }    
-    public function time()
+    public function timeportal()
     {
         /*$musTable = TableRegistry::get('mus');
         $mu = $musTable->newEntity();
