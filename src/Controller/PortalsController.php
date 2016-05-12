@@ -110,7 +110,7 @@ public function addmus($faction=null,$agent=null,$captured=null,$mus=0)
 		
 		$dat=date("Y/m/d H:i:s",$row->captured/1000);
     		$res=$res.$dat." ".$row->agent;
-    		$res=$res." : ";
+    		$res=$res." <br> ";
 	}
         $this->set('g', $res);
     } 
