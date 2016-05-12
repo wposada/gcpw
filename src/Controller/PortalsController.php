@@ -103,7 +103,7 @@ public function addmus($faction=null,$agent=null,$captured=null,$mus=0)
     {
     	$guar = TableRegistry::get('Guardians');
     	$query = $guar->find();
-	$query->select(['agent']);
+	$query->select(['agent'])->limit(10);
 	$res="";
 	foreach ($query as $row) {
     		$res=$res.$row->agent;
