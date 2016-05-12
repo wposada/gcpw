@@ -105,15 +105,13 @@ public function addmus($faction=null,$agent=null,$captured=null,$mus=0)
     	$guar = TableRegistry::get('Guardians');
     	$query = $guar->find();
 	$query->select(['agent','captured'])->limit(10)->order(['captured' => 'DESC']);
-	print_r($query);
-	$res="";
-	foreach ($query as $row) {
+/*	foreach ($query as $row) {
 		
 		$dat=date("Y/m/d H:i:s",$row->captured/1000);
     		$res=$res.$dat." ".$row->agent;
     		$res=$res.PHP_EOL;
-	}
-        $this->set('g', $res);
+	}*/
+        $this->set('g', $query);
     } 
     
         
