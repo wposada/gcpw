@@ -106,7 +106,8 @@ public function addmus($faction=null,$agent=null,$captured=null,$mus=0)
 	$query->select(['agent','captured'])->limit(10)->order(['captured' => 'DESC']);
 	$res="";
 	foreach ($query as $row) {
-    		$res=$res.$row->captured." ".$row->agent;
+		$dat=gmdate("Y-m-d\TH:i:s\Z", $row->captured)
+    		$res=$res.$dat." ".$row->agent;
     		$res=$res." | ";
 	}
         $this->set('g', $res);
