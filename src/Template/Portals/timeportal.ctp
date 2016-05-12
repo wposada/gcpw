@@ -10,7 +10,7 @@
     <?php foreach ($g as $time): ?>
     <tr>
         <td><?php echo $time->captured; ?></td>
-        <td><?php echo $time->agent); ?></td>
+        <td><?php echo $time->agent; ?></td>
     </tr>
     <?php endforeach; ?>
 
