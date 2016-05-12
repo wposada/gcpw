@@ -9,8 +9,8 @@
 
     <?php foreach ($g as $time): ?>
     <tr>
-        <td><?php echo print_r($time).$time['g']['agent']; ?></td>
-        <td><?php echo "-".$time['g']['captured']; ?></td>
+        <td><?php echo $g['G']['agent']; ?></td>
+        <td><?php echo "-".print_r($time); ?></td>
     </tr>
     <?php endforeach; ?>
 
