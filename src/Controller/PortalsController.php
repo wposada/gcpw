@@ -101,6 +101,7 @@ public function addmus($faction=null,$agent=null,$captured=null,$mus=0)
     }    
     public function timeportal()
     {
+    	date_default_timezone_set('America/Bogota');
     	$guar = TableRegistry::get('Guardians');
     	$query = $guar->find();
 	$query->select(['agent','captured'])->limit(10)->order(['captured' => 'DESC']);
