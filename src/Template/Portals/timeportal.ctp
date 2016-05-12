@@ -9,7 +9,7 @@
 
     <?php foreach ($g as $time): ?>
     <tr>
-        <td><?php echo $g['time']['agent']; ?></td>
+        <td><?php //echo $g['time']['agent']; ?></td>
         <td><?php echo "-".print_r($time); ?></td>
     </tr>
     <?php endforeach; ?>
