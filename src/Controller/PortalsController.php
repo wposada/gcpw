@@ -108,7 +108,7 @@ public function addmus($faction=null,$agent=null,$captured=null,$mus=0)
 	$res="";
 	foreach ($query as $row) {
 		
-		$dat=date('Y-m-d h:i:s',$row->captured/1000).gmdate("Y/m/d H:i:s",$row->captured/1000);
+		$dat=gmdate("Y/m/d H:i:s",$row->captured/1000);
     		$res=$res.$dat." ".$row->agent;
     		$res=$res." : ";
 	}
