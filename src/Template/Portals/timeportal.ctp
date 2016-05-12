@@ -9,7 +9,7 @@
 
     <?php foreach ($g as $time): ?>
     <tr>
-        <td><?php echo $time->captured; ?></td>
+        <td><?php echo date("Y/m/d H:i:s",$time->captured/1000); ?></td>
         <td><?php echo $time->agent; ?></td>
     </tr>
     <?php endforeach; ?>
