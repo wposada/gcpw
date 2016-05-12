@@ -103,10 +103,10 @@ public function addmus($faction=null,$agent=null,$captured=null,$mus=0)
     {
     	$guar = TableRegistry::get('Guardians');
     	$query = $guar->find();
-	$query->select(['agent'])->limit(10);
+	$query->select(['agent','captured'])->limit(10)->order(['captured' => 'DESC']);
 	$res="";
 	foreach ($query as $row) {
-    		$res=$res.$row->agent;
+    		$res=$res.$row->caprured." ".$row->agent;
     		$res=$res." : ";
 	}
         $this->set('g', $res);
