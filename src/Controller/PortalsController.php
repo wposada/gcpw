@@ -40,7 +40,6 @@ public function index($filtering=null)
     
     public function update($fact=null,$lng=null,$lat=null,$agent=null,$name=null,$address=null,$guid=null)
     {
-
     $portals = TableRegistry::get('Portals');
     $conditions = array(
     'Portals.lat' => $lat,
@@ -50,7 +49,6 @@ if ($exists){
         $portal = $portals->get($conditions);
         $this->set('g', '1');
     }else{
-
         $portal = $portals->newEntity();$this->set('g', '2');
         $portal-> name =$name;
         $portal-> address =$address;
@@ -69,7 +67,6 @@ if ($exists){
         
         $portal = $this->Portals->get($id);
         $this->set(compact('portal'));
-
     }
 public function addg($lng=null,$lat=null,$faction=null,$agent=null,$captured=null)
     {
