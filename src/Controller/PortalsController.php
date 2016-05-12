@@ -100,7 +100,13 @@ public function addmus($faction=null,$agent=null,$captured=null,$mus=0)
     {
     	date_default_timezone_set('America/Bogota');
     	$guar = TableRegistry::get('Guardians');
-    	$query = $guar->find();
+    	$query = $guar->find()->hydrate(false)
+    ->join([
+        'table' => 'portals',
+        'alias' => 'c',
+        'type' => 'LEFT',
+        'conditions' => 'c.lat = guardians.lat',
+    ]);
 	$query->select(['agent','captured'])->limit(10)->order(['captured' => 'DESC']);
 /*	foreach ($query as $row) {
 		
