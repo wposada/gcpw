@@ -100,8 +100,7 @@ public function addmus($faction=null,$agent=null,$captured=null,$mus=0)
     {
     	date_default_timezone_set('America/Bogota');
     	$guar = TableRegistry::get('Guardians');
-    	$query = $guar->find()->hydrate(false)
-    ->join([
+    	$query = $guar->find()->hydrate(false)->join([
         'table' => 'portals',
         'alias' => 'c',
         'type' => 'LEFT',
