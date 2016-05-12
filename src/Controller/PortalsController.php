@@ -101,19 +101,12 @@ public function addmus($faction=null,$agent=null,$captured=null,$mus=0)
     }    
     public function timeportal()
     {
-        /*$musTable = TableRegistry::get('mus');
-        $mu = $musTable->newEntity();
-        $mu->faction = $faction;
-        $mu->agent = $agent;
-        $mu->captured = $captured;
-        $mu->mus = $mus;*/
-        /*if ($musTable->save($mu)) {
-            // The $article entity contains the id now
-            $this->set('g', '1');
-        }*/
-        $result = $this->Portals->query("SELECT * FROM portals limit 2;");
-        $vari=print_r($result,1);
-        $this->set('g', $result);
+       $query = TableRegistry::get('Mus')->find();
+	$respu="";
+	foreach ($query as $mu) {
+    		$respu=+$mu->agent;
+	}
+        $this->set('g', $respu);
     } 
     
         
