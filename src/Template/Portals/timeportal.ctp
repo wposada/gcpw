@@ -1,8 +1,8 @@
 <h1>Last Captureds</h1>
 <table>
     <tr>
-        <th>Id</th>
-        <th>Title</th>
+        <th>Captured</th>
+        <th>Agent</th>
     </tr>
 
     <!-- Here is where we loop through our $posts array, printing out post info -->
