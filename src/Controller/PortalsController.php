@@ -104,8 +104,10 @@ public function addmus($faction=null,$agent=null,$captured=null,$mus=0)
     	$mus = TableRegistry::get('Mus');
     	$query = $mus->find();
 	$query->select(['agent']);
+	$res="";
 	foreach ($query as $row) {
-    		$res=$row->agent;
+    		$res+=$row->agent;
+    		$res+=" : ";
 	}
         $this->set('g', $res);
     } 
