@@ -107,7 +107,7 @@ public function addmus($faction=null,$agent=null,$captured=null,$mus=0)
         'table' => 'portals',
         'alias' => 'c',
         'type' => 'LEFT',
-        'conditions' => 'c.lat = lat',
+        'conditions' => 'c.lat = guardians.lat',
     ]);
     	
     	
