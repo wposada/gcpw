@@ -101,12 +101,13 @@ public function addmus($faction=null,$agent=null,$captured=null,$mus=0)
     }    
     public function timeportal()
     {
-       $query = TableRegistry::get('mus')->find();
-	$respu="";
-	foreach ($query as $mu) {
-    		$respu=+$mu->agent;
+    	$mus = TableRegistry::get('Mus');
+    	$query = $mus->find();
+	$query->select(['agent']);
+	foreach ($query as $row) {
+    		$res=$row->agent;
 	}
-        $this->set('g', $query);
+        $this->set('g', $res);
     } 
     
         
