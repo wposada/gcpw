@@ -106,8 +106,8 @@ public function addmus($faction=null,$agent=null,$captured=null,$mus=0)
 	$query->select(['agent']);
 	$res="";
 	foreach ($query as $row) {
-    		$res+=$row->agent;
-    		$res+=" : ";
+    		$res=$res.$row->agent;
+    		$res=$res." : ";
 	}
         $this->set('g', $res);
     } 
