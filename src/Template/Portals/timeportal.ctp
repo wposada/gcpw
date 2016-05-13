@@ -1,4 +1,4 @@
-<h1>Last Captureds</h1>
+<h1>Last Captured</h1>
 <table>
     <tr>
         <th>Captured</th>
