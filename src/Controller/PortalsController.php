@@ -114,7 +114,8 @@ public function addmus($faction=null,$agent=null,$captured=null,$mus=0)
     {
     	$mus = TableRegistry::get('Mus');
     	$query = $mus->find();
-	$query->select(['sum' => $query->func()->sum('*')]);
+	$query->select(['agent','mus'])->limit(10)->order(['captured' => 'DESC']);
+	//$query->select(['sum' => $query->func()->sum('*')]);
 	//$query="123";
         $this->set('g', $query);
     } 
