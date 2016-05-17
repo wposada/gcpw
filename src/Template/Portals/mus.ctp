@@ -1,8 +1,8 @@
 <h1>Last Mus</h1>
 <table>
     <tr>
-        <th>sum</th>
-        <th>agent</th>
+        <th>Agent</th>
+        <th>Mus</th>
     </tr>
 
     <!-- Here is where we loop through our $posts array, printing out post info -->
