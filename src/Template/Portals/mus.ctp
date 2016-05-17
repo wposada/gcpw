@@ -1,5 +1,4 @@
 <h1>Last Mus</h1>
-<?php print_r($g); ?>
 <table>
     <tr>
         <th>sum</th>
@@ -10,8 +9,8 @@
 
     <?php foreach ($g as $muus): ?>
     <tr>
-        <td><?php ($muus);//echo $muus->sum; ?></td>
-        <td><?php //echo $muus->sum; ?></td>
+        <td><?php echo $muus->agent; ?></td>
+        <td><?php echo $muus->agent; ?></td>
     </tr>
     <?php endforeach; ?>
 
