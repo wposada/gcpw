@@ -9,8 +9,8 @@
 
     <?php foreach ($g as $muus): ?>
     <tr>
-        <td><?php echo $muus->sum; ?></td>
-        <td><?php echo $muus->sum; ?></td>
+        <td><?php //echo $muus->sum; ?></td>
+        <td><?php //echo $muus->sum; ?></td>
     </tr>
     <?php endforeach; ?>
 
