@@ -7,11 +7,11 @@
 
     <!-- Here is where we loop through our $posts array, printing out post info -->
 
-    <?php foreach ($g as $muus): ?>
+    <?php //foreach ($g as $muus): ?>
     <tr>
         <td><?php //echo $muus->sum; ?></td>
         <td><?php //echo $muus->sum; ?></td>
     </tr>
-    <?php endforeach; ?>
+    <?php //endforeach; ?>
 
 </table>
