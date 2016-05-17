@@ -110,6 +110,15 @@ public function addmus($faction=null,$agent=null,$captured=null,$mus=0)
 	}*/
         $this->set('g', $query);
     } 
+    public function mus()
+    {
+    	date_default_timezone_set('America/Bogota');
+    	$mus = TableRegistry::get('Mus');
+    	$query = $mus->find();
+	$query->select(['agent','captured'])->limit(10)->order(['captured' => 'DESC']);
+	$query->select(['sum' => $query->func()->sum('*')]);
+        $this->set('g', $query);
+    } 
     
         
     public function view2($id = null)
