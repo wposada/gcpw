@@ -1,5 +1,5 @@
 <h1>Last Mus</h1>
-<?php print_r($g->sum); ?>
+<?php print_r($g); ?>
 <table>
     <tr>
         <th>sum</th>
