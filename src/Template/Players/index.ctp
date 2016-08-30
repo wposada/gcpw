@@ -21,10 +21,10 @@ $this->Paginator->options(array('url' => array("?"=>array("filtering"=>$_f))));
 	
 			<th><?php echo $this->Paginator->sort('id', 'ID'); ?></th>
 			<th><?php echo $this->Paginator->sort('nick', 'nick'); ?></th>
-			<th><?php echo //$this->Paginator->sort('address', 'Address'); ?></th>
-			<th><?php echo //$this->Paginator->sort('agent', 'Agent'); ?></th>
-			<th><?php echo //$this->Paginator->sort('lng', 'Lng'); ?></th>
-			<th><?php echo //$this->Paginator->sort('lat', 'Lat'); ?></th>
+			<th><?php echo "";//$this->Paginator->sort('address', 'Address'); ?></th>
+			<th><?php echo "";//$this->Paginator->sort('agent', 'Agent'); ?></th>
+			<th><?php echo "";//$this->Paginator->sort('lng', 'Lng'); ?></th>
+			<th><?php echo "";//$this->Paginator->sort('lat', 'Lat'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	
