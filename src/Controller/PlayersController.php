@@ -2,7 +2,7 @@
 namespace App\Controller;
 use Cake\Network\Http\Client;
 use Cake\ORM\TableRegistry;
-class PortalsController extends AppController
+class PlayersController extends AppController
 {
     
 public function index($filtering=null)
