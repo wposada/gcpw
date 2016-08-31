@@ -2,6 +2,7 @@
 namespace App\Controller;
 use Cake\Network\Http\Client;
 use Cake\ORM\TableRegistry;
+use Cake\Datasource\ConnectionManager;
 class PlayersController extends AppController
 {
     
@@ -23,16 +24,19 @@ public function index($filtering=null)
     
         public function guardian()
     {
+    	$connection = ConnectionManager::get('default');
+	$results = $connection->execute('SELECT * FROM players')->fetchAll('assoc');
+/*
     	$guar = TableRegistry::get('Guardians');
     	$query = $guar->find();
 	$query->select(['agent','captured'])->limit(10)->order(['captured' => 'DESC']);
-	/*	foreach ($query as $row) {
+		foreach ($query as $row) {
 		
 		$dat=date("Y/m/d H:i:s",$row->captured/1000);
     		$res=$res.$dat." ".$row->agent;
     		$res=$res.PHP_EOL;
 	}*/
-        $this->set('g', $query);
+        $this->set('g', $results);
     } 
     
 }
