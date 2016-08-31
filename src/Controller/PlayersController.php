@@ -25,7 +25,14 @@ public function index($filtering=null)
         public function guardian()
     {
     	$connection = ConnectionManager::get('default');
-	$results = $connection->execute('SELECT * FROM players')->fetchAll('assoc');
+	$results = $connection->execute('SELECT FROM_UNIXTIME(max(captured)/1000,"%Y-%m-%d %H:%i:%s") as captura 
+,(SELECT agent from guardians g1 where 
+  g1.lng=g2.lng and 
+  g1.lat=g2.lat 
+  order by captured desc 
+  limit 1) as agente ,lng,lat 
+  FROM guardians g2 where (SELECT agent from guardians g1 where g1.lng=g2.lng and g1.lat=g2.lat order by captured desc limit 1)
+  like "%mich43%" group by lng,lat order by captura')->fetchAll('assoc');
 /*
     	$guar = TableRegistry::get('Guardians');
     	$query = $guar->find();
