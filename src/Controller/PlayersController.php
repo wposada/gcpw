@@ -20,4 +20,19 @@ public function index($filtering=null)
        	// pass the value to our view.ctp
     	$this->set('players', $players);
     }
+    
+        public function guardian()
+    {
+    	$guar = TableRegistry::get('Guardians');
+    	$query = $guar->find();
+	$query->select(['agent','captured'])->limit(10)->order(['captured' => 'DESC']);
+	/*	foreach ($query as $row) {
+		
+		$dat=date("Y/m/d H:i:s",$row->captured/1000);
+    		$res=$res.$dat." ".$row->agent;
+    		$res=$res.PHP_EOL;
+	}*/
+        $this->set('g', $query);
+    } 
+    
 }
