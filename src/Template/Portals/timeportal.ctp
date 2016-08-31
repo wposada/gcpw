@@ -7,10 +7,10 @@
 
     <!-- Here is where we loop through our $posts array, printing out post info -->
 
-    <?php foreach ($g as $time): ?>
+    <?php foreach ($g as $data): ?>
     <tr>
-        <td><?php echo date("Y/m/d H:i:s",$time->captured/1000); ?></td>
-        <td><?php echo $time->agent; ?></td>
+        <td><?php echo $data->id; ?></td>
+        <td><?php echo $data->nick; ?></td>
     </tr>
     <?php endforeach; ?>
 
