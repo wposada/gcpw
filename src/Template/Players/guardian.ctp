@@ -9,8 +9,8 @@
 
     <?php foreach ($g as $data): ?>
     <tr>
-        <td><?php echo $data["id"]; ?></td>
-        <td><?php echo $data["nick"]; ?></td>
+        <td><?php echo $data["captura"]; ?></td>
+        <td><?php echo $data["agente"]; ?></td>
     </tr>
     <?php endforeach; ?>
 
