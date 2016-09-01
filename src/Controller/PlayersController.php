@@ -22,7 +22,7 @@ public function index($filtering=null)
     	$this->set('players', $players);
     }
     
-        public function guardian()
+        public function guardian($agent=null)
     {
     	$connection = ConnectionManager::get('default');
 	$results = $connection->execute('SELECT FROM_UNIXTIME(max(captured)/1000,"%Y-%m-%d %H:%i:%s") as captura 
@@ -32,17 +32,7 @@ public function index($filtering=null)
   order by captured desc 
   limit 1) as agente ,lng,lat 
   FROM guardians g2 where (SELECT agent from guardians g1 where g1.lng=g2.lng and g1.lat=g2.lat order by captured desc limit 1)
-  like "%mich43%" group by lng,lat order by captura')->fetchAll('assoc');
-/*
-    	$guar = TableRegistry::get('Guardians');
-    	$query = $guar->find();
-	$query->select(['agent','captured'])->limit(10)->order(['captured' => 'DESC']);
-		foreach ($query as $row) {
-		
-		$dat=date("Y/m/d H:i:s",$row->captured/1000);
-    		$res=$res.$dat." ".$row->agent;
-    		$res=$res.PHP_EOL;
-	}*/
+  like "%'.$agent.'%" group by lng,lat order by captura')->fetchAll('assoc');
         $this->set('g', $results);
     } 
     
