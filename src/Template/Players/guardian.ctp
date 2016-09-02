@@ -14,11 +14,12 @@
 
     <?php foreach ($g as $data): ?>
     <tr>
-        <td><?php echo $data["captura"];
+        <td><?php 
+        //echo $data["captura"];
         $hoy= new DateTime("now");
-        $dias	= (strtotime($hoy)-strtotime($data["captura"]))/86400;
-	    $dias 	= abs($dias); $dias = floor($dias);
-	    echo $$dias."días";
+        //$dias	= (strtotime($hoy)-strtotime($data["captura"]))/86400;
+	//    $dias 	= abs($dias); $dias = floor($dias);
+	    echo $dias."días";
         
         ?></td>
         <td><?php echo $data["captura"]; ?></td>
