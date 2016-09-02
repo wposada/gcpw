@@ -16,17 +16,13 @@
     <tr>
         <td><?php 
         //echo $data["captura"];
-        $hoy= new DateTime("now");
-        //$dias	= (strtotime($hoy)-strtotime($data["captura"]))/86400;
-	//    $dias 	= abs($dias); $dias = floor($dias);
-	    echo $dias."días";
-        
+        echo "pp";
         ?></td>
         <td><?php echo $data["captura"]; ?></td>
         <td><?php echo $data["agente"]; ?></td>
         <td><?php echo $data["lng"]; ?></td>
         <td><?php echo $data["lat"]; ?></td>
-        <td><?php echo "https://www.ingress.com/intel?ll=".$data["lat"].",".$data["lng"]."&z=17&pll=".$data["lat"].",".$data["lng"]; ?></td>
+        <td><?php echo $this->Html->link('link',"https://www.ingress.com/intel?ll=".$data["lat"].",".$data["lng"]."&z=17&pll=".$data["lat"].",".$data["lng"]); ?></td>
     </tr>
     <?php endforeach; ?>
 
