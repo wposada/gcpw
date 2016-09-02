@@ -40,7 +40,7 @@ public function index($filtering=null)
   order by captured desc 
   limit 1) as agente ,lng,lat 
   FROM guardians g2 where (SELECT agent from guardians g1 where g1.lng=g2.lng and g1.lat=g2.lat order by captured desc limit 1)
-  like "%'.$agent.'%" group by lng,lat order by captura')->fetchAll('assoc');
+  = '.$agent.' group by lng,lat order by captura limit 20')->fetchAll('assoc');
         $this->set('g', $results);
     } 
     
