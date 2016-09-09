@@ -16,7 +16,7 @@
     <tr>
         <td><?php 
         //echo $data["captura"];
-        echo "pp";
+        echo time();
         ?></td>
         <td><?php echo $data["captura"]; ?></td>
         <td><?php echo $data["agente"]; ?></td>
