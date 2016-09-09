@@ -16,7 +16,10 @@
     <tr>
         <td><?php 
         //echo $data["captura"];
-        echo time();
+        $fc=$data["captura"]/1000;
+        $fa=time();
+        $total=($fa-$fc)/86400;
+        echo number_format($total, 2, '.', '');
         ?></td>
         <td><?php echo $data["captura"]; ?></td>
         <td><?php echo $data["agente"]; ?></td>
