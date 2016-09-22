@@ -22,7 +22,7 @@ public function index($filtering=null)
     	$this->set('players', $players);
     }
     
-        public function guardian($agent=null)
+        public function guardian($agent=null,$flag=0)
     {
     	$connection = ConnectionManager::get('default');
 	/*$results = $connection->execute('SELECT FROM_UNIXTIME(max(captured)/1000,"%Y-%m-%d %H:%i:%s") as captura 
@@ -33,6 +33,16 @@ public function index($filtering=null)
   limit 1) as agente ,lng,lat 
   FROM guardians g2 where (SELECT agent from guardians g1 where g1.lng=g2.lng and g1.lat=g2.lat order by captured desc limit 1)
   like "%'.$agent.'%" group by lng,lat order by captura')->fetchAll('assoc');*/
+  if($flag==1){
+  	  $results = $connection->execute('SELECT max(captured) as captura 
+,(SELECT agent from guardians g1 where 
+  g1.lng=g2.lng and 
+  g1.lat=g2.lat 
+  order by captured desc 
+  limit 1) as agente ,lng,lat 
+  FROM guardians g2 group by lng,lat order by captura')->fetchAll('assoc');
+  	
+  }else{
   $results = $connection->execute('SELECT max(captured) as captura 
 ,(SELECT agent from guardians g1 where 
   g1.lng=g2.lng and 
@@ -41,6 +51,9 @@ public function index($filtering=null)
   limit 1) as agente ,lng,lat 
   FROM guardians g2 where (SELECT agent from guardians g1 where g1.lng=g2.lng and g1.lat=g2.lat order by captured desc limit 1)
   = "'.$agent.'" group by lng,lat order by captura limit 20')->fetchAll('assoc');
+  }
+  
+  
         $this->set('g', $results);
     } 
     
