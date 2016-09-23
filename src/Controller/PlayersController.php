@@ -73,9 +73,3 @@ public function index($filtering=null)
     } 
     
 }
-$output = array(
-    "status" => "OK",
-    "message" => "You are good",
-    "content" => "content"
-);
-$this->set('output',$output);
