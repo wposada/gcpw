@@ -12,12 +12,13 @@ class PlayersController extends AppController
         $this->loadComponent('RequestHandler');
     }
 public function getTimeCapture(){
+	 $this->RequestHandler->renderAs($this, 'json');
 	$output = array(
     "status" => "OK",
     "message" => "You are good",
     "content" => "content"
 );
-$this->set('_serialize', array('output'));
+$this->set('output', $output);
 	
 }
     
