@@ -7,7 +7,7 @@ class PlayersController extends AppController
 {
 
 
-public function get_time_capture(){
+public function getTimeCapture(){
 	//public $components = array('RequestHandler');
 	$output = array(
     "status" => "OK",
