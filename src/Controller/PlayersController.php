@@ -11,8 +11,7 @@ class PlayersController extends AppController
         parent::initialize();
         $this->loadComponent('RequestHandler');
     }
-
-public $components = array('RequestHandler');
+public function getTimeCapture(){
 	$output = array(
     "status" => "OK",
     "message" => "You are good",
