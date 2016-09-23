@@ -5,10 +5,14 @@ use Cake\ORM\TableRegistry;
 use Cake\Datasource\ConnectionManager;
 class PlayersController extends AppController
 {
+	
+    public function initialize()
+    {
+        parent::initialize();
+        $this->loadComponent('RequestHandler');
+    }
 
 public $components = array('RequestHandler');
-public function getTimeCapture(){
-	$this->loadComponent('RequestHandler');
 	$output = array(
     "status" => "OK",
     "message" => "You are good",
