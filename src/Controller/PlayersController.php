@@ -5,6 +5,18 @@ use Cake\ORM\TableRegistry;
 use Cake\Datasource\ConnectionManager;
 class PlayersController extends AppController
 {
+
+
+public function getTimeCapture(){
+	public $components = array('RequestHandler');
+	$output = array(
+    "status" => "OK",
+    "message" => "You are good",
+    "content" => "content"
+);
+$this->set($output);
+	
+}
     
 public function index($filtering=null)
     {
@@ -40,7 +52,7 @@ public function index($filtering=null)
   g1.lat=g2.lat 
   order by captured desc 
   limit 1) as agente ,lng,lat 
-  FROM guardians g2 group by lng,lat order by captura')->fetchAll('assoc');
+  FROM guardians g2 group by lng,lat order by captura limit 5')->fetchAll('assoc');
   	
   }else{
   $results = $connection->execute('SELECT max(captured) as captura 
