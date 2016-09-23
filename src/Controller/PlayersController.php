@@ -8,7 +8,7 @@ class PlayersController extends AppController
 
 
 public function getTimeCapture(){
-	//public $components = array('RequestHandler');
+	$this->loadComponent('RequestHandler');
 	$output = array(
     "status" => "OK",
     "message" => "You are good",
