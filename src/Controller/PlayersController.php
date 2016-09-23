@@ -17,7 +17,7 @@ public function getTimeCapture(){
     "message" => "You are good",
     "content" => "content"
 );
-$this->set('_serialize', $output);
+$this->set('_serialize', array('output'));
 	
 }
     
