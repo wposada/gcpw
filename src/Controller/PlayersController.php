@@ -6,10 +6,9 @@ use Cake\Datasource\ConnectionManager;
 class PlayersController extends AppController
 {
 
-
+public $components = array('RequestHandler');
 public function getTimeCapture(){
 	$this->loadComponent('RequestHandler');
-	$this->request->onlyAllow('ajax');
 	$output = array(
     "status" => "OK",
     "message" => "You are good",
