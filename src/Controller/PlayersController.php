@@ -9,6 +9,7 @@ class PlayersController extends AppController
 
 public function getTimeCapture(){
 	$this->loadComponent('RequestHandler');
+	$this->request->onlyAllow('ajax');
 	$output = array(
     "status" => "OK",
     "message" => "You are good",
