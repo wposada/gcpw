@@ -19,7 +19,7 @@ public function getTimeCapture($lng,$lat){
 		$agente=$data["agent"];
 		
 	endforeach;
-		
+	$agente=print_r($results,1);	
 		
 	 $this->RequestHandler->renderAs($this, 'json');
 	$output = array(
