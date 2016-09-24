@@ -15,7 +15,7 @@ public function getTimeCapture($lng,$lat){
 	$connection = ConnectionManager::get('default');
 	
 	//
-	$result = $connection->execute('SELECT agent,captured FROM `guardians` WHERE `lng` = -74.114352 AND `lat` = 4.602126 ORDER BY `guardians`.`captured` DESC limit 1'->fetchAll('assoc');
+	$result = $connection->execute("SELECT agent,captured FROM `guardians` WHERE `lng` = -74.114352 AND `lat` = 4.602126 ORDER BY `guardians`.`captured` DESC limit 1"->fetchAll('assoc');
 	
 	 $this->RequestHandler->renderAs($this, 'json');
 	$output = array(
