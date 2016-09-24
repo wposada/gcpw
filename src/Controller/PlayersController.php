@@ -12,10 +12,12 @@ class PlayersController extends AppController
         $this->loadComponent('RequestHandler');
     }
 public function getTimeCapture($lng,$lat){
+	$lng=$lng/1000000;
+	$lat=$lat/1000000;
 	$connection = ConnectionManager::get('default');
-	$results = $connection->execute('SELECT * FROM `guardians` WHERE `lng` = '.$lng/1000000.' AND `lat` = '.$lat/1000000.' ORDER BY `guardians`.`captured` DESC limit 5')->fetchAll('assoc');
+	$results = $connection->execute('SELECT * FROM `guardians` WHERE `lng` = '.$lng.' AND `lat` = '.$lat.' ORDER BY `guardians`.`captured` DESC limit 5')->fetchAll('assoc');
 	//SELECT * FROM `guardians` WHERE `lng` = -74.114352 AND `lat` = 4.602126 ORDER BY `guardians`.`captured` DESC
-	$agente=$results[0]["agent"];
+	//$agente=$results[0]["agent"];
 	$agente=print_r($results,1);	
 		
 	 $this->RequestHandler->renderAs($this, 'json');
