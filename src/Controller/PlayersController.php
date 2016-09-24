@@ -21,7 +21,7 @@ public function getTimeCapture($lng,$lat){
 	$output = array(
     "address" => "lng:".$lng."lat:".$lat,
     "iris_id" => "You are good",
-    "age" => "10 days, 22:24:31".$result->agent[0];
+    "age" => "10 days, 22:24:31".$result;
 );
 $this->set('output', $output);
 	
