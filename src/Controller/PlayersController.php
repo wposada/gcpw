@@ -14,9 +14,9 @@ class PlayersController extends AppController
 public function getTimeCapture(){
 	 $this->RequestHandler->renderAs($this, 'json');
 	$output = array(
-    "status" => "OK",
-    "message" => "You are good",
-    "content" => "content"
+    "address" => "OK",
+    "iris_id" => "You are good",
+    "age" => "10 days, 22:24:31"
 );
 $this->set('output', $output);
 	
