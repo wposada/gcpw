@@ -11,10 +11,10 @@ class PlayersController extends AppController
         parent::initialize();
         $this->loadComponent('RequestHandler');
     }
-public function getTimeCapture(){
+public function getTimeCapture($lng,$lat){
 	 $this->RequestHandler->renderAs($this, 'json');
 	$output = array(
-    "address" => "OK",
+    "address" => "lng:".$lng."lat:".$lat,
     "iris_id" => "You are good",
     "age" => "10 days, 22:24:31"
 );
