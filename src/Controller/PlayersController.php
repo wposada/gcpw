@@ -15,10 +15,11 @@ public function getTimeCapture($lng,$lat){
 	$lng=$lng/1000000;
 	$lat=$lat/1000000;
 	$connection = ConnectionManager::get('default');
-	$results = $connection->execute('SELECT * FROM `guardians` WHERE `lng` = '.$lng.' AND `lat` = '.$lat.' ORDER BY `guardians`.`captured` DESC limit 5')->fetchAll('assoc');
+	$sql="SELECT * FROM `guardians` WHERE `lng` = '.$lng.' AND `lat` = '.$lat.' ORDER BY `guardians`.`captured` DESC limit 5";
+	$results = $connection->execute($sql)->fetchAll('assoc');
+	
 	//SELECT * FROM `guardians` WHERE `lng` = -74.114352 AND `lat` = 4.602126 ORDER BY `guardians`.`captured` DESC
 	$agente=$results[0]['agent'];
-	
 	$fc=$results[0]["captured"]/1000;
         $fa=time();
         $total=($fa-$fc)/86400;
