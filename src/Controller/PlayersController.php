@@ -12,11 +12,16 @@ class PlayersController extends AppController
         $this->loadComponent('RequestHandler');
     }
 public function getTimeCapture($lng,$lat){
+	$connection = ConnectionManager::get('default');
+	
+	//
+	$result = $connection->execute('SELECT agent,captured FROM `guardians` WHERE `lng` = -74.114352 AND `lat` = 4.602126 ORDER BY `guardians`.`captured` DESC limit 1'->fetchAll('assoc');
+	
 	 $this->RequestHandler->renderAs($this, 'json');
 	$output = array(
     "address" => "lng:".$lng."lat:".$lat,
     "iris_id" => "You are good",
-    "age" => "10 days, 22:24:31"
+    "age" => "10 days, 22:24:31".$result->agent[0];
 );
 $this->set('output', $output);
 	
@@ -41,6 +46,13 @@ public function index($filtering=null)
         public function guardian($agent=null,$flag=0)
     {
     	$connection = ConnectionManager::get('default');
+    	$results = $connection->execute('SELECT max(captured) as captura 
+,(SELECT agent from guardians g1 where 
+  g1.lng=g2.lng and 
+  g1.lat=g2.lat 
+  order by captured desc 
+  limit 1) as agente ,lng,lat 
+  FROM guardians g2 group by lng,lat order by captura limit 5')->fetchAll('assoc');
 	/*$results = $connection->execute('SELECT FROM_UNIXTIME(max(captured)/1000,"%Y-%m-%d %H:%i:%s") as captura 
 ,(SELECT agent from guardians g1 where 
   g1.lng=g2.lng and 
