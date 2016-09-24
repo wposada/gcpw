@@ -18,13 +18,17 @@ public function getTimeCapture($lng,$lat){
 	$results = $connection->execute('SELECT * FROM `guardians` WHERE `lng` = '.$lng.' AND `lat` = '.$lat.' ORDER BY `guardians`.`captured` DESC limit 5')->fetchAll('assoc');
 	//SELECT * FROM `guardians` WHERE `lng` = -74.114352 AND `lat` = 4.602126 ORDER BY `guardians`.`captured` DESC
 	$agente=$results[0]['agent'];
+	
+	$fc=$results[0]["captured"]/1000;
+        $fa=time();
+        $total=($fa-$fc)/86400;
+        $dias=number_format($total, 2, '.', '');
 	//$agente=print_r($results,1);	
-		
 	 $this->RequestHandler->renderAs($this, 'json');
 	$output = array(
-    "address" => "lng:".$lng."lat:".$lat.$agente,
+    "address" => "lng:".$lng."lat:".$lat,
     "iris_id" => "You are good",
-    "age" => "10 days, 22:24:31 ".$agente
+    "age" => $dias."días, x ".$agente
 );
 $this->set('output', $output);
 	
