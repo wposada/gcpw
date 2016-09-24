@@ -13,17 +13,14 @@ class PlayersController extends AppController
     }
 public function getTimeCapture($lng,$lat){
 	$connection = ConnectionManager::get('default');
-	$results = $connection->execute('SELECT * FROM `guardians` WHERE `lng` = -74.114352 AND `lat` = 4.602126 ORDER BY `guardians`.`captured` DESC limit 5')->fetchAll('assoc');
+	$results = $connection->execute('SELECT * FROM `guardians` WHERE `lng` = '.$lng/1000000.' AND `lat` = '.$lat/1000000.' ORDER BY `guardians`.`captured` DESC limit 5')->fetchAll('assoc');
 	//SELECT * FROM `guardians` WHERE `lng` = -74.114352 AND `lat` = 4.602126 ORDER BY `guardians`.`captured` DESC
-	foreach ($data as $results):
-		$agente=$data["agent"];
-		
-	endforeach;
+	$agente=$results[0]["agent"];
 	$agente=print_r($results,1);	
 		
 	 $this->RequestHandler->renderAs($this, 'json');
 	$output = array(
-    "address" => "lng:".$lng."lat:".$lat,
+    "address" => "lng:".$lng."lat:".$lat.$agente,
     "iris_id" => "You are good",
     "age" => "10 days, 22:24:31 ".$agente
 );
