@@ -85,6 +85,7 @@ public function addg($lng=null,$lat=null,$faction=null,$agent=null,$captured=nul
     }
 public function addmus($faction=null,$agent=null,$captured=null,$mus=0)
     {
+	$this->response->header('Access-Control-Allow-Origin', '*');    
         $musTable = TableRegistry::get('mus');
         $mu = $musTable->newEntity();
         $mu->faction = $faction;
