@@ -4,11 +4,7 @@ use Cake\Network\Http\Client;
 use Cake\ORM\TableRegistry;
 class PortalsController extends AppController
 {
-public function beforeFilter() {
-    parent::beforeFilter();
-    $this->response->header('Access-Control-Allow-Origin', '*');	
-}
-    
+  
 public function index($filtering=null)
     {
     $this -> Portals -> recursive = 0;
