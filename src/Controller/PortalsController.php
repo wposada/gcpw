@@ -6,6 +6,9 @@ class PortalsController extends AppController
 {
 public function beforeFilter() {
     parent::beforeFilter();
+   $this->Auth->allow(array('login'));
+    $this->Security->csrfCheck = false;
+	
     $this->response->header('Access-Control-Allow-Origin', '*');	
 }
     
