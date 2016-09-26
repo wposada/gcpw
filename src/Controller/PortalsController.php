@@ -2,6 +2,7 @@
 namespace App\Controller;
 use Cake\Network\Http\Client;
 use Cake\ORM\TableRegistry;
+use Cake\Datasource\ConnectionManager;
 class PortalsController extends AppController
 {
   
@@ -113,12 +114,11 @@ public function addmus($faction=null,$agent=null,$captured=null,$mus=0)
     } 
     public function mus()
     {
-    	$mus = TableRegistry::get('Mus');
-    	$query = $mus->find();
-	$query->select(['agent','mus','sum' => $query->func()->sum('mus')])->limit(100)->group('agent')->order(['sum' => 'DESC']);
-	//$query->select(['sum' => $query->func()->sum('*')]);
+    	$connection = ConnectionManager::get('default');
+	$sql="SELECT agent,sum(mus) as mus  FROM `mus` group by agent ORDER BY sum(mus) DESC";
+	$results = $connection->execute($sql)->fetchAll('assoc');
 	//$query="123";
-        $this->set('g', $query);
+        $this->set('g', $results);
     } 
     
         
