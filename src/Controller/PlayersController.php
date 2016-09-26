@@ -28,7 +28,7 @@ public function getTimeCapture($lng,$lat){
 	 $this->RequestHandler->renderAs($this, 'json');
 	$output = array(
     "address" => "lng:".$lng."lat:".$lat,
-    "iris_id" => "You are good",
+    "iris_id" => ".$sql.",
     "age" => $dias."días, x ".$agente
 );
 $this->set('output', $output);
