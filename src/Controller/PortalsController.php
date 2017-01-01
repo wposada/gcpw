@@ -103,7 +103,7 @@ public function addmus($faction=null,$agent=null,$captured=null,$mus=0)
     	date_default_timezone_set('America/Bogota');
     	$guar = TableRegistry::get('Guardians');
     	$query = $guar->find();
-	$query->select(['agent','captured'])->limit(50)->order(['captured' => 'DESC']);
+	$query->select(['agent','captured'])->limit(100)->order(['captured' => 'DESC']);
 /*	foreach ($query as $row) {
 		
 		$dat=date("Y/m/d H:i:s",$row->captured/1000);
